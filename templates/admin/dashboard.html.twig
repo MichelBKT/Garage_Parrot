@@ -1,0 +1,96 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}Tableau de bord{% endblock %}
+
+{% block main %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8 rounded p-2 justify-content-center p-3 mx-3">
+        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</br>Vous possédez les droits 
+            {% if is_granted('ROLE_ADMIN') %} administrateurs, vous avez accès à toutes les modifications du site web!
+            {% endif %}
+        </h2>
+        <h3 class="text-success p-3">Récapitulatif messagerie</h3>
+        <p class="text-success p-3">>>> {{ea.user.user|length}} message(s) reçu(s) dont 
+            {{(ea.user.user|length) - (app.user.user|length)}} message(s) non répondu(s)   
+        </p>
+        <pre>
+            {{ dump() }}
+        </pre>
+    </div>
+    {#<div class="row justify-content-center p-3">
+        {% for contacts in contact | reverse %}
+            <div class="text-success col-lg-6 shadow-lg rounded">
+                {% if contacts.lu == 0 %}
+                    <a 
+                        href="https://mailtrap.io/signin" 
+                        target="blank" 
+                        class="text-success"
+                    >
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            height="1.25em"
+                            viewBox="0 0 512 512" 
+                            class="Response"
+                        >
+                            <style>
+                                .Response{
+                                    fill:#ffff00
+                                }
+                            </style>
+                            <path d="M205 34.8c11.5 5.1 19 16.6 19 29.2v64H336c97.2 0 176 78.8 176 176c0 113.3-81.5 163.9-100.2
+                            174.1c-2.5 1.4-5.3 1.9-8.1 1.9c-10.9 0-19.7-8.9-19.7-19.7c0-7.5 4.3-14.4 9.8-19.5c9.4-8.8 22.2-26.4
+                            22.2-56.7c0-53-43-96-96-96H224v64c0 12.6-7.4 24.1-19 29.2s-25 3-34.4-5.4l-160-144C3.9 225.7 0 217.1
+                                0 208s3.9-17.7 10.6-23.8l160-144c9.4-8.5 22.9-10.6 34.4-5.4z"/>
+                        </svg>
+                    </a>
+                    {% else %}
+                        <a href="{{ path('user_contactDelete', {id: contacts.id}) }}">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        height="1.25em" 
+                                        viewBox="0 0 448 512"
+                                        class="mx-2"
+
+                                    >
+                                        <style>
+                                            svg{
+                                                fill:#ff0000;
+                                            }
+                                        </style>
+                                        <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0
+                                                32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6
+                                                17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/>
+                                    </svg>
+                            </a>
+                {% endif %}
+                <ul class="text-success">Expéditeur:
+                    <li class="text-light">{{contacts.titre}} {{contacts.prenom}} {{contacts.nom}}</li>
+                    <li class="text-light">{{contacts.email}}</li>
+                </ul>
+                <ul class="text-success">************************************************************************</br>
+                                            Message reçu le {{contacts.createdAt | date('d-M-Y h:i:s') | format_datetime('full')}}</br> 
+                                            ************************************************************************   
+                                            </br> Réponse envoyée
+
+                    {% if contacts.lu == 0 %} 
+                        <a href= "{{ path('user_read', {id: contacts.id}) }}" >
+                            <input type="image" src="{{ asset('build/images/square-regular.svg') }}" class="square mx-5">
+                        </a>
+                        {% else %}    
+                            <a href="{{ path('user_unread', {id: contacts.id}) }}">
+                                <input type="image" src="{{ asset('build/images/square-check-solid.svg') }}" class="square mx-3">  
+                                
+                            </a>
+                    {% endif %}
+                    <li class="text-success ">Objet: {{contacts.objet}}</li>
+                    <li class="text-light mx-5">{{contacts.sujet}}</li> 
+                </ul>
+            </div>
+        {% endfor %}
+    </div>#}    
+</div>
+
+
+
+{% endblock %}
