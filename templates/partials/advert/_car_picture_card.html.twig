@@ -1,0 +1,7 @@
+{# La classe bootstrap est différente par rapport au carousel #}
+
+{% if advert.imageName %}
+    <img src="{{ vich_uploader_asset(advert, 'imageFile') }}" class="card-img-top h-50" alt="{{'imageName'}}"/>
+{% else %}
+    <img src="{{ asset('build/images/image-par-défaut.png') }}" class="card-img-top h-50" alt="image voiture par défaut">    
+{% endif %}

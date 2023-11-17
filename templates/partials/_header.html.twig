@@ -1,4 +1,3 @@
-{% block body %}
 
 <header>
   <nav class="navbar mb-5 navbar-expand-lg navbar-dark bg-dark text-white border-bottom sticky-top">
@@ -26,33 +25,31 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="/">Home</a>
+              <a class="nav-link mx-lg-2 linkNav" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="#">Véhicules d'occasion</a>
+              <a class="nav-link mx-lg-2 linkNav" href="{{ path('app_used_car') }}">Véhicules d'occasion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-lg-2" href="#">Entretiens et services</a>
+              <a class="nav-link mx-lg-2 linkNav" href="{{ path('app_maintenance_service')}}">Entretiens et services</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle mx-lg-2" href="#" role="button" data-bs-toggle="dropdown">Nous contacter</a>
+              <a class="nav-link dropdown-toggle mx-lg-2 linkNav" href="#" role="button" data-bs-toggle="dropdown">Nous contacter</a>
               <ul class="dropdown-menu bg-dark">
                 <li>
-                  <a class="dropdown-item" href="tel:0383838282">Par téléphone</a>
+                  <a class="dropdown-item linkNav" href="tel:0383838282">Par téléphone</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Nous écrire</a>
+                  <a class="dropdown-item linkNav" href="#">Nous écrire</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/#plan-toulouse">Nous localiser</a>
+                  <a class="dropdown-item linkNav" href="/#plan-toulouse">Nous localiser</a>
                 </li>
               </ul>
             </li>
           </ul>
+        <a href="{{ path('app_login') }}"><button type="button" class="btn btn-outline-success linkNav">Connexion</button></a>
         </div>
       </div>
   </nav>
 </header>
-
-{% endblock %}
-

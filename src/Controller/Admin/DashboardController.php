@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Advert;
 use App\Entity\Comment;
+use App\Entity\Contact;
 use App\Entity\Maintenance;
 use App\Entity\Service;
 use App\Entity\Timetable;
@@ -49,6 +50,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Home', 'fa fa-home');
+        yield MenuItem::linkToCrud('Messagerie', 'fa-solid fa-envelope', Contact::class);
         yield MenuItem::linkToCrud('Postes de travail', 'fa-solid fa-briefcase', Workplace::class);
         yield MenuItem::linkToCrud('Utilisateurs', 'fa-solid fa-users', User::class);
         yield MenuItem::linkToCrud('Entretiens', 'fa-solid fa-wrench', Maintenance::class);

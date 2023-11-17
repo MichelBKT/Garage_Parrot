@@ -14,7 +14,7 @@ class Timetable
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?array $day_week = [];
+    private ?string $day_week = null;
 
     #[ORM\Column(length: 255)]
     private ?string $time = null;
@@ -23,17 +23,18 @@ class Timetable
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDayWeek(): ?array
+    public function getDayWeek(): ?string
     {
         return $this->day_week;
     }
 
-    public function setDayWeek(array $day_week): static
+    public function setDayWeek(string $day_week): static
     {
         $this->day_week = $day_week;
 

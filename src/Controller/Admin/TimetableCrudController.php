@@ -7,7 +7,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class TimetableCrudController extends AbstractCrudController
@@ -22,13 +21,12 @@ class TimetableCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            ChoiceField::new('day_week')
-            ->setChoices(['Lundi'=>'1', 'Mardi' => '2', 'Mercredi' => '3', 'Jeudi'=>'4', 'Vendredi' => '5',
-            'Samedi' => '6', 'Dimanche' => '7'])
-            ->allowMultipleChoices(),
+            ChoiceField::new('day_week', 'Jour de la semaine')
+            ->setChoices(['Lundi'=>'Lundi', 'Mardi' => 'Mardi', 'Mercredi' => 'Mercredi', 'Jeudi'=>'Jeudi', 'Vendredi' => 'Vendredi',
+            'Samedi' => 'Samedi', 'Dimanche' => 'Dimanche']),
             
-            TextField::new('time'),
-            AssociationField::new('user', 'Nom de l\'utilisateur')->autocomplete(),
+            TextField::new('time', 'Plage horaire'),
+            AssociationField::new('user', 'Nom du valideur')->autocomplete(),
         ];
     }
     

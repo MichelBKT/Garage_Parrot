@@ -24,7 +24,7 @@ class MaintenanceCrudController extends AbstractCrudController
         
         return [
             IdField::new('id')->hideOnForm(),
-            AssociationField::new('user', 'Nom de l\'utilisateur')->autocomplete(),
+            AssociationField::new('user', 'Nom du valideur')->autocomplete(),
             TextField::new('designation', 'Libellé')
             
         ];

@@ -1,0 +1,48 @@
+<table class="table table-bordered table-secondary">
+    <caption class="text-light text-top fw-bold">{{ advert.title }} {{ advert.price }}€</caption>
+    <thead>
+        <tr>
+            <th scope="row" class="text-dark fw-bold"></th>
+            <th scope="row" class="text-dark fw-bold">Valeurs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" class="col-3 text-dark">Contrôle technique</th>
+            <td class="col-10">
+                {% if advert.CTOk == 1 %} OK
+                {% else %}
+                    A passer
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="col-2 text-dark">Kilométrage</th>
+            <td class="col-4">{{ advert.km }}</td>
+        </tr>                        
+        <tr>
+            <th scope="row" class="col-2 text-dark">Boite de vitesse</th>
+            <td class="col-4">
+                {% if advert.manualGear == 1 %} Manuelle
+                {% else %}
+                    Automatique
+                {% endif %}
+            </td>
+        </tr>
+        <tr> 
+            <th scope="row" class="col-2 text-dark"> Nombre de portes</th>
+            <td class="col-4">
+                {% if advert.doors5 == 1 %} 5 
+                {% else %}3{% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="col-2 text-dark">Puissance fiscale</th>
+            <td class="col-4">{{ advert.fiscalPower }} cv</td>
+        </tr>
+        <tr>
+            <th scope="row" class="col-2 text-dark">Emission de Co2</th>
+            <td class="col-4">{{ advert.co2Emission }} g/km</td>
+        </tr>
+    </tbody>
+</table>

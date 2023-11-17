@@ -1,29 +1,27 @@
-{% block body %}
-
 <footer class="row row-cols-lg-4 py-2 border-top bg-dark">
     <div class="col mb-3">
       <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
         <img class="bi me-2" width="200" height="80" src="{{asset('build/images/logo_complet_rect.png')}}">
       </a>
-      <p class="text-light">© 2023</p>
+      <p class="text-light fw-bold">© 2023</p>
     </div>
 
     <div class="col mb-3">
-      <h5 class="hours mb-0 text-success p-3">A propos</h5>
+      <h5 class="hours mb-0 text-success p-3 linkNav">A propos</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
                                      Condition d'utilisation
                                   </a>
         </li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
                                      Mentions Légales
                                   </a>
         </li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
                                      Politique de confidentialité
                                   </a>
         </li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
                                      Plan du site
                                   </a>
         </li>
@@ -31,15 +29,13 @@
     </div>
 
     <div class="col mb-3">
-      <h5 class="hours mb-0 text-success p-3">Nos horaires d'ouverture</h5>
-      {#}
+      <h5 class="hours mb-0 text-success p-3 linkNav">Nos horaires d'ouverture</h5>
       <ul class="nav flex-column text-white">
-        {% for horaire in horaires %}
-          <li class="nav-item mb-2"> {{ horaire.jourSemaine }}: {{ horaire.plageHoraire }}</li>
-        {% endfor %}
+      {% for timetable in timetables %}
+          <li class="nav-item mb-2 text-light fw-bold">
+            {{ timetable.dayWeek }}>> 
+            {{ timetable.time }}</li>
+      {% endfor %}
       </ul>
-      {#}
     </div>
 </footer>
-
-{% endblock %}

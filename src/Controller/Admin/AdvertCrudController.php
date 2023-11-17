@@ -8,9 +8,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AdvertCrudController extends AbstractCrudController
 {
@@ -22,21 +24,25 @@ class AdvertCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id')->hideOnForm(),
-            TextField::new('title', 'Titre'),
-            IntegerField::new('price', 'Prix (en €)'),
-            DateTimeField::new('created_at')
-            ->setDisabled(),
-            BooleanField::new('CTOk', 'Contrôle Technique ok'),
-            IntegerField::new('km', 'Kilométrage (km)'),
-            BooleanField::new('manualGear', 'Boite de vitesse manuelle'),
-            BooleanField::new('doors5', '5 portes'),
-            IntegerField::new('fiscalPower', 'Puissance fiscale (cv)'),
-            IntegerField::new('co2Emission', 'Emission de CO2 (en g/km)'),
-            AssociationField::new('user')->autocomplete(),
+        $mappingParams = $this->getParameter('vich_uploader.mappings');
+        $carImagePath = $mappingParams['car']['uri_prefix'];
         
-        ];
+        yield IdField::new('id')->hideOnForm();
+        yield TextField::new('title', 'Titre');
+        yield IntegerField::new('price', 'Prix (en €)');
+        yield DateTimeField::new('created_at')
+            ->setDisabled();
+        yield BooleanField::new('CTOk', 'Contrôle Technique ok')->hideOnIndex();
+        yield IntegerField::new('km', 'Kilométrage (km)');
+        yield BooleanField::new('manualGear', 'Boite de vitesse manuelle')->hideOnIndex();
+        yield BooleanField::new('doors5', '5 portes')->hideOnIndex();
+        yield IntegerField::new('fiscalPower', 'Puissance fiscale (cv)');
+        yield IntegerField::new('co2Emission', 'Emission de CO2 (en g/km)');
+        yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex();
+        yield ImageField::new('imageName')->setBasePath($carImagePath)->hideOnForm();
+        yield AssociationField::new('user', 'Nom du valideur')->autocomplete();
+        
+    
     }
     
 }

@@ -22,7 +22,7 @@ class ServiceCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('designation', 'Libellé'),
-            AssociationField::new('user', 'Nom de l\'utilisateur')->autocomplete(),
+            AssociationField::new('user', 'Nom du valideur')->autocomplete(),
         ];
     }
     

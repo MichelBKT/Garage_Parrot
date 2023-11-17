@@ -10,3 +10,98 @@ $light: #d4d4d4;
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+
+.linkNav {
+    font-family: 'Audiowide', cursive;
+    font-size: 0.98em;
+}
+
+h1, h2 {
+    font-family: 'Audiowide', cursive;
+    font-size: 1.5em;
+}
+
+a {
+  text-decoration: none; 
+}
+
+.nav-link.active {
+    border-bottom: solid 2px $success;
+  }
+
+.containerFilters {
+  margin-bottom: 10%;
+  width: 75%;
+  text-align: center;
+  margin-left: 15%;
+}
+.containerFilters > p > label{
+  text-align: center;
+}
+
+.containerFilters > p {
+  margin: 0;
+}
+
+@media screen and (min-width: 1025px) {
+  .containerFilters{
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+  }
+  .form-label {
+    width: 20%;
+  }
+  .containerFilters > p {
+    display: inline;
+  }
+  .containerFilters > p > label{
+    text-align: center;
+  }
+}
+
+.atelier {
+  border-radius: 10%;
+}
+
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
+.slide-5 {
+  margin-left: 30vw;
+  background-color: $secondary ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vw;
+  width: auto;
+}
+
+@media screen and (max-width:991px) {
+  .slide-1,
+  .slide-2,
+  .slide-3,
+  .slide-4,
+  .slide-5 {
+  margin-left: 10vw;
+  background-color: $secondary ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  width: 75vw;
+}
+}
+
+.star-empty, .star {
+  color: $success;
+}
+
+.phone, .address {
+  display: inline-block;
+}
+
+.clé-molette {
+  border-radius: 30%;
+}

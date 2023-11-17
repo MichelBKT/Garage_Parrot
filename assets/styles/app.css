@@ -486,7 +486,6 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
-  appearance: button;
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -544,7 +543,6 @@ legend + * {
 
 [type=search] {
   -webkit-appearance: textfield;
-  appearance: textfield;
   outline-offset: -2px;
 }
 
@@ -567,7 +565,6 @@ legend + * {
 ::file-selector-button {
   font: inherit;
   -webkit-appearance: button;
-  appearance: button;
 }
 
 output {
@@ -11857,4 +11854,97 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.linkNav {
+  font-family: "Audiowide", cursive;
+  font-size: 0.98em;
+}
+
+h1, .h1, h2, .h2 {
+  font-family: "Audiowide", cursive;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link.active {
+  border-bottom: solid 2px #e6de01;
+}
+
+.containerFilters {
+  margin-bottom: 10%;
+  width: 75%;
+  text-align: center;
+  margin-left: 15%;
+}
+
+.containerFilters > p > label {
+  text-align: center;
+}
+
+.containerFilters > p {
+  margin: 0;
+}
+
+@media screen and (min-width: 1025px) {
+  .containerFilters {
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+  }
+  .form-label {
+    width: 20%;
+  }
+  .containerFilters > p {
+    display: inline;
+  }
+  .containerFilters > p > label {
+    text-align: center;
+  }
+}
+.atelier {
+  border-radius: 10%;
+}
+
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
+.slide-5 {
+  margin-left: 30vw;
+  background-color: #154d67;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vw;
+  width: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .slide-1,
+  .slide-2,
+  .slide-3,
+  .slide-4,
+  .slide-5 {
+    margin-left: 10vw;
+    background-color: #154d67;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 75vw;
+  }
+}
+.star-empty, .star {
+  color: #e6de01;
+}
+
+.phone, .address {
+  display: inline-block;
+}
+
+.clé-molette {
+  border-radius: 30%;
 }/*# sourceMappingURL=app.css.map */

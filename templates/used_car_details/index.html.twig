@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails occasion Parrot{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+        <section class="row justify-content-center">
+            <h1 class="col-lg-8 mt-3 text-success text-center shadow-lg rounded mb-5">Détail du véhicule : {{ advert.title }} </h1>
+            {% include "partials/advert/_car_picture_details.html.twig" %}
+        <div class="table-responsive-md col-lg-6">
+            {% include "partials/advert/_table_details_car.html.twig" %}
+        <p class="text-success fw-bold">Besoin de plus d'informations?</p>
+        <a 
+            class="btn btn-outline-info mb-5 linkNav" 
+            href="#">Contacter le vendeur
+        </a>
+        <a class="btn btn-success text-dark mb-5 linkNav" href="{{path('app_used_car')}}">Retour</a>
+        </div>
+        </section>
+</main>
+{% endblock %}
