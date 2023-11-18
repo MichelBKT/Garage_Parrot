@@ -12,9 +12,14 @@
         {% endblock %}
     </head>
     <body class="bg-secondary">
+
             {% include "partials/_header.html.twig" %}
+
+            {% include "partials/flash_message/_check_flash_message.html.twig" %}
+
         {% block body %}
         {% endblock %}
+
             {% include "partials/_footer.html.twig" %}
     </body>
         {% block javascripts %}

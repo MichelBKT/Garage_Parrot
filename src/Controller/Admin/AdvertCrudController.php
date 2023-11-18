@@ -29,17 +29,16 @@ class AdvertCrudController extends AbstractCrudController
         
         yield IdField::new('id')->hideOnForm();
         yield TextField::new('title', 'Titre');
+        yield TextareaField::new('imageFile', 'Photo')->setFormType(VichImageType::class)->hideOnIndex();
+        yield ImageField::new('imageName')->setBasePath($carImagePath)->hideOnForm();
         yield IntegerField::new('price', 'Prix (en €)');
-        yield DateTimeField::new('created_at')
-            ->setDisabled();
+        yield DateTimeField::new('created_at', 'Date de publication')->setDisabled();
         yield BooleanField::new('CTOk', 'Contrôle Technique ok')->hideOnIndex();
         yield IntegerField::new('km', 'Kilométrage (km)');
         yield BooleanField::new('manualGear', 'Boite de vitesse manuelle')->hideOnIndex();
         yield BooleanField::new('doors5', '5 portes')->hideOnIndex();
         yield IntegerField::new('fiscalPower', 'Puissance fiscale (cv)');
         yield IntegerField::new('co2Emission', 'Emission de CO2 (en g/km)');
-        yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex();
-        yield ImageField::new('imageName')->setBasePath($carImagePath)->hideOnForm();
         yield AssociationField::new('user', 'Nom du valideur')->autocomplete();
         
     

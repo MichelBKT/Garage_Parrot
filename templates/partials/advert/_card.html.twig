@@ -1,16 +1,20 @@
- {% for advert in adverts %} 
-                    <div class="col-4 card bg-primary text-white mb-5 mx-5" style="width: 18rem;">
-                        {% include "partials/advert/_car_picture_card.html.twig" %}
-                        <div class="card-body">
-                            <h5 class="card-title text-success fw-semibold linkNav text-center">{{ advert.title}}</br></br></h5>
-                            <p class="card-text fw-semibold border-top text-success text-center linkNav">Prix : {{ advert.price }}€ </p>
-                            <p class="card-text fw-semibold">Kilométrage : {{ advert.km }} km</p>
-                            <p class="card-text fw-semibold">Emission Co2 : {{ advert.co2Emission }} g/km</p>
-                            <a 
-                                href="{{path('app_used_car_details', {'id': advert.id})}}" 
-                                class="btn details text-success fw-semibold btn-outline-secondary d-flex justify-content-center">
-                                Détails
-                            </a> 
-                        </div>
-                    </div>
-                {% endfor %}
+{% for advert in adverts %} 
+<div class="col-4 card border-primary bg-secondary mb-5 mx-5" style="width: 20rem;">
+    {% include "partials/advert/_car_picture_card.html.twig" %}
+    <div class="card-body">
+        <h4 class="card-title text-success fw-semibold linkNav text-center">{{ advert.title}}</br></br></h5>
+        <p class="card-text fw-semibold border-top text-success text-center linkNav">Prix : {{ advert.price }}€ </p>
+        <p class="card-text text-light fw-semibold">Kilométrage : {{ advert.km }} km</p>
+        <p class="card-text text-light fw-semibold">Emission Co2 : {{ advert.co2Emission }} g/km</p>
+        <a 
+            href="{{path('app_used_car_details', {'id': advert.id})}}" 
+            class="btn details text-success fw-semibold btn-outline-primary d-flex justify-content-center">
+            Détails
+        </a> 
+    </div>
+</div>
+
+{% endfor %}
+
+
+

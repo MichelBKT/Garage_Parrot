@@ -21,7 +21,8 @@
                 </p>
                 <ul class="entretiens-list col-lg-8 row row-cols-2 p-3 text-white shadow-lg rounded">
                     {% for maintenance in maintenances %}
-                        <li class="col-lg-4 p-3 p-lg-0">
+                        <li class="maintenanceList text-light col-lg-4 p-3 p-lg-0">
+                        <img src="{{ asset('build/images/wrench.svg') }}"  alt="puce">
                             {{ maintenance.designation }}
                         </li>  
                     {% endfor %}
@@ -37,7 +38,8 @@
                 </p>
                 <ul class="services-list col-lg-8 row row-cols-2 p-3 mb-5 text-white shadow-lg rounded">
                     {% for service in services %}
-                        <li class="col-lg-4 p-3 p-lg-0">
+                        <li class="serviceList text-light col-lg-4 p-3 p-lg-0">
+                        <img src="{{ asset('build/images/screw-wrench.svg') }}"  alt="puce">
                             {{ service.designation }}
                         </li>
                     {% endfor %}

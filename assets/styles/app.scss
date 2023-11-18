@@ -105,3 +105,18 @@ a {
 .clé-molette {
   border-radius: 30%;
 }
+
+.maintenanceList {
+  list-style: none;
+  color: $success;
+}
+
+.serviceList {
+  list-style: none;
+  color: $success;
+}
+
+.formu-contact{
+  display: inline-block;
+  margin-right: 10px;
+}

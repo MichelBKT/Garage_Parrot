@@ -23,9 +23,9 @@ class CommentCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
+            TextField::new('nickname', 'Pseudo'),
             ChoiceField::new('rate', 'Note')
             ->setChoices(['1/5'=> 1, '2/5'=> 2, '3/5'=> 3, '4/5'=> 4, '5/5'=> 5])->renderExpanded(),
-            TextField::new('nickname', 'Pseudo'),
             TextEditorField::new('designation', 'Commentaire'),
             BooleanField::new('is_online', 'Publié en ligne'),
             AssociationField::new('user','Nom du valideur')->autocomplete()

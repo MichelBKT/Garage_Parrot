@@ -11947,4 +11947,19 @@ a {
 
 .clé-molette {
   border-radius: 30%;
+}
+
+.maintenanceList {
+  list-style: none;
+  color: #e6de01;
+}
+
+.serviceList {
+  list-style: none;
+  color: #e6de01;
+}
+
+.formu-contact {
+  display: inline-block;
+  margin-right: 10px;
 }/*# sourceMappingURL=app.css.map */

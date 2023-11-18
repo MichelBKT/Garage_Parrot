@@ -1,16 +1,16 @@
 <footer class="row row-cols-lg-4 py-2 border-top bg-dark">
     <div class="col mb-3">
       <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-        <img class="bi me-2" width="200" height="80" src="{{asset('build/images/logo_complet_rect.png')}}">
+        <img class="bi me-2" width="200" height="80" src="{{asset('build/images/logo_complet_rect.png')}}" alt="logo">
       </a>
       <p class="text-light fw-bold">© 2023</p>
     </div>
 
     <div class="col mb-3">
-      <h5 class="hours mb-0 text-success p-3 linkNav">A propos</h5>
+      <h4 class="hours mb-0 text-success p-3 linkNav">A propos</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
-                                     Condition d'utilisation
+                                     Conditions d'utilisation
                                   </a>
         </li>
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
@@ -33,7 +33,7 @@
       <ul class="nav flex-column text-white">
       {% for timetable in timetables %}
           <li class="nav-item mb-2 text-light fw-bold">
-            {{ timetable.dayWeek }}>> 
+            {{ timetable.dayWeek }}: 
             {{ timetable.time }}</li>
       {% endfor %}
       </ul>

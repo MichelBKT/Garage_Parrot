@@ -1,29 +1,30 @@
          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item slide-1 active " >
-                        {% for advert in adverts|slice(-1,1) %}
+                        
+                        {% for advert in adverts|slice(-1,1) %}   
                             {% include "partials/advert/_car_picture_carousel.html.twig" %}
                         {% endfor %}  
                     </div>                
                     <div class="carousel-item slide-2">
                         {% for advert in adverts|slice(-2,1) %}                        
                             {% include "partials/advert/_car_picture_carousel.html.twig" %}
-                        {% endfor %}
+                        {% endfor %} 
                     </div>
                     <div class="carousel-item slide-3" >
-                        {% for advert in adverts|slice(-3,1) %}
-                           {% include "partials/advert/_car_picture_carousel.html.twig" %}
-                        {% endfor %}
+                        {% for advert in adverts|slice(-3,1) %}   
+                            {% include "partials/advert/_car_picture_carousel.html.twig" %}
+                        {% endfor %} 
                     </div>
                     <div class="carousel-item slide-4" >
                         {% for advert in adverts|slice(-4,1) %}
                             {% include "partials/advert/_car_picture_carousel.html.twig" %}
-                        {% endfor %}
+                        {% endfor %} 
                     </div>
                     <div class="carousel-item slide-5" >
-                        {% for advert in adverts|slice(-5,1) %}
+                        {% for advert in adverts|slice(-5,1) %} 
                             {% include "partials/advert/_car_picture_carousel.html.twig" %}
-                        {% endfor %}
+                        {% endfor %} 
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

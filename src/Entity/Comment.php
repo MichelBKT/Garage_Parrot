@@ -24,7 +24,7 @@ class Comment
     private ?bool $is_online = null;
 
     #[ORM\ManyToOne(inversedBy: 'comment')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn]
     private ?User $user = null;
 
     #[ORM\Column(type: Types::TEXT)]

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire contact - Garage Parrot{% endblock %}
+
+{% block body %}
+    <div class="row justify-content-center">
+
+        <h3 class=" col-6 p-3 text-center fs-5 text-success linkNav shadow-lg ">Contacter votre Garage Parrot</h3>
+    </div>
+
+    <div class="row row-cols-2 col justify-content-center ">
+        {{ form_start(formView) }}
+            <div class="formu-contact col-3">
+                {{ form_row(formView.last_name) }}
+            </div>
+            <div class="formu-contact col-3">
+                {{ form_row(formView.first_name) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(formView.email) }}
+            </div>
+                {% if advert.title is defined %}
+                        {{ form_row(formView.objet, {
+                            value : advert.title
+                        })}}
+                {% else %}
+                    {{ form_row(formView.object) }}
+                {% endif %}
+                    {{ form_row(formView.subject) }}
+        <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-outline-info p-2 my-5 mx-2 linkNav col-3">Envoyer</button>
+                    <a class="btn btn-outline-success p-2 my-5 mx-2 linkNav col-3" href="{{path('app_')}}">Retour</a>
+        </div>
+            {{ form_end(formView) }}
+        </div>
+{% endblock %}
