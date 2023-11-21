@@ -1,6 +1,6 @@
 <section class="row mt-5 justify-content-center">
     <h1 class="col-lg-10 m-5 p-3 text-success text-center shadow-lg rounded">Bienvenue sur le site du Garage V. PARROT</h1>
-    <div class="description col-4 mt-3 p-5">
+    <div class="description col-lg-4 mt-3 p-5">
         <p class="description-welcome text-light">"Toute l'équipe est à votre disposition pour vous accompagner et vous 
             conseiller sur l'achat d'un véhicule d'occasion ou pour la réparation et l'entretien de votre véhicule. N'hésitez-pas 
             à nous rendre visite ou nous contacter pour plus de renseignements."
@@ -16,22 +16,23 @@
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="my-5">
             </iframe>
         </div>
     </section>
     <div class="text-light row justify-content-center">
-        <div class="col-8 address">
-            <img src="{{ asset('build/images/location.svg') }}" alt="logo localisation">
-            <span class="text-light p-3 linkNav">25 rue de l'industrie </br>31000 TOULOUSE </br> </span>
-            <img src="{{ asset('build/images/phone.svg') }}" alt="logo téléphone">
+        <div class="col-8">
+            <img src="{{ asset('build/images/localisation.png') }}" width="45" height"10" alt="logo localisation">
+            <span class="text-light linkNav">25 rue de l'industrie </br>31000 TOULOUSE </br> </span>
+            <img src="{{ asset('build/images/phone.png') }}" width="45" height"10" alt="logo téléphone" class="phone">
             <a href="tel:0383838282" class="btn btn-outline-success linkNav mt-3">03 83 83 82 82</a>
         </div>     
     </div>
 <section class="row justify-content-center">
     <h1 class="col-lg-10 mt-3 p-3 text-success text-center shadow-lg  mb-5">Nos services</h1>
     <img src="{{ asset('build/images/clé_molette.webp')}}" class="img-fluid clé-molette w-25 mb-5" alt="image clé à molette">
-    <h3 class="col-10 p-3 text-light fw-bold text-center shadow-lg">
+    <h3 class="col-10 p-3 text-primary fw-bold text-center shadow-lg">
         VEHICULES D'OCCASIONS
     </h3>
     <p class="col-10 p-3 text-light text-center"> 
@@ -40,7 +41,7 @@
         Consultez nos annonces en ligne.
         </br>
     </p>
-    <h3 class="col-10 p-3 text-light fw-bold text-center shadow-lg">
+    <h3 class="col-10 p-3 text-primary fw-bold text-center shadow-lg">
         RENDEZ-VOUS ATELIER
     </h3> 
     <p class="col-10 p-3 text-light text-center"> 

@@ -9,6 +9,7 @@ use App\Repository\CommentRepository;
 use App\Repository\TimetableRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,8 +17,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class PageController extends AbstractController
 {
     #[Route('/', name: 'app_', methods: ['GET', 'POST'])]
-    public function index(TimetableRepository $timetableRepository, AdvertRepository $advertRepo, CommentRepository $commentRepository, Request $request, EntityManagerInterface $em): Response
+    public function index(TimetableRepository $timetableRepository, ParameterBagInterface $parameterBagInterface, AdvertRepository $advertRepo, CommentRepository $commentRepository, Request $request, EntityManagerInterface $em): Response
     {       
+        $limit = $parameterBagInterface->get('comments_limit');
+        $commentRepository = $commentRepository->findBy(['is_online' => 'true'],[],$limit);
         $advertRepo = $advertRepo->findBy([], ['created_at' => 'asc']);
 
         $comment = new Comment();
@@ -33,7 +36,7 @@ class PageController extends AbstractController
             'form'=> $form->createView(),
             'adverts' => $advertRepo,
             'timetables' => $timetableRepository->findAll(),
-            'comments'=> $commentRepository->findAll(),
+            'comments'=> $commentRepository,
         ]);
     }
 }

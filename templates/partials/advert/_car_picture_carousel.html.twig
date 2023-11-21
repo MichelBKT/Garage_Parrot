@@ -1,7 +1,7 @@
 {# La classe bootstrap est différente par rapport à la card #}
 
 {% if advert.imageName %}
-    <img src="{{ vich_uploader_asset(advert, 'imageFile') }}" class= "d-block w-100" alt="{{'imageName'}}"/>
+    <img src="{{ vich_uploader_asset(advert, 'imageFile') }}" class= "d-block img-fluid" alt="{{'imageName'}}"/>
 {% else %}
-    <img src="{{ asset('build/images/image-par-défaut.png') }}" class= "d-block w-100" alt="image voiture par défaut">    
+    <img src="{{ asset('build/images/image-par-défaut.png') }}" class= "d-block img-fluid" alt="image voiture par défaut">    
 {% endif %}

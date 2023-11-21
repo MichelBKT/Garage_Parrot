@@ -1,7 +1,7 @@
 <footer class="row row-cols-lg-4 py-2 border-top bg-dark">
     <div class="col mb-3">
       <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-        <img class="bi me-2" width="200" height="80" src="{{asset('build/images/logo_complet_rect.png')}}" alt="logo">
+        <img class="bi me-2" width="200" height="200" src="{{asset('build/images/logo carre.png')}}" alt="logo">
       </a>
       <p class="text-light fw-bold">© 2023</p>
     </div>
@@ -9,15 +9,15 @@
     <div class="col mb-3">
       <h4 class="hours mb-0 text-success p-3 linkNav">A propos</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
+        <li class="nav-item mb-2"><a href="{{ path('app_about') }}#utilisationCond"  class="nav-link p-0 text-light fw-bold">
                                      Conditions d'utilisation
                                   </a>
         </li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
+        <li class="nav-item mb-2"><a href="{{ path('app_about') }}#legalsMotions" class="nav-link p-0 text-light fw-bold">
                                      Mentions Légales
                                   </a>
         </li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light fw-bold">
+        <li class="nav-item mb-2"><a href="{{ path('app_about') }}#confidentialsLaw"  class="nav-link p-0 text-light fw-bold">
                                      Politique de confidentialité
                                   </a>
         </li>

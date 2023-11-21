@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos - Garage Parrot{% endblock %}
+
+{% block body %}
+
+<h1 class="col-lg-10 my-5 p-3 text-success text-center shadow-lg rounded">A propos</h1>
+
+{% include "partials/about/_utilisation_cond.html.twig" %}
+
+{% include "partials/about/_legals_motions.html.twig" %}
+
+{% include "partials/about/_confidentials_law.html.twig" %}
+
+{% endblock %}
