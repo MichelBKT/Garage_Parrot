@@ -1,16 +1,25 @@
 {% extends '@EasyAdmin/page/content.html.twig' %}
 
-{% block content_title %}Tableau de bord{% endblock %}
+{% block content_title %}Tableau de bord - Administrateur{% endblock %}
 
 {% block main %}
 
-<div class="row justify-content-center">
-    <div class="col-lg-8 rounded p-2 justify-content-center p-3 mx-3">
-        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</br>Vous possédez les droits 
-            {% if is_granted('ROLE_ADMIN') %} administrateurs, vous avez accès à toutes les modifications du site web!
-            {% endif %}
-        </h2>  
-</div>
+
+        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</h2> 
+        <p>Vous possédez les <strong>droits administrateurs</strong>, vous avez accès à toutes les modifications du site web! </br></p>
+        <p>Les autres utilisateurs ont un accès restreint et ils ont accès uniquement à ces catégories :</p>
+            <ul>
+                <li>Messagerie</li>
+                <li>Commentaires</li>
+                <li>Annonces</li>           
+            </ul>
+        <p>Ils peuvent donc par définition répondre aux messages reçus, gérer la modération des commentaires ainsi que la gestion des annonces</br></p>
+        <h3>Messagerie</h3>
+        <p>Dans vos catégories, un aperçu de la messagerie est disponible. Vous pouvez répondre en suivant ce lien : 
+            <a href="https://mailtrap.io/" target="_blank"><button type="button">Mailtrap</button></a></br>  
+        </p> 
+        <h3>Retour vers le site web</h3>
+        <p>Pour retourner sur le site web en restant connecter, veuillez cliquer <a href="{{ path('app_') }}">ici</a> </p>
 
 
 

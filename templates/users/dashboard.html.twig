@@ -4,14 +4,15 @@
 
 {% block main %}
 
-<div class="row justify-content-center">
-    <div class="col-lg-8 rounded p-2 justify-content-center p-3 mx-3">
-        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</br>Vous possédez les droits 
-            {% if is_granted('ROLE_ADMIN') %} administrateurs, vous avez accès à toutes les modifications du site web!
-            {% else %}
-                utilisateurs, vous avez un accès restreint aux modifications du site web.
-            {% endif %}
-        </h2>  
+        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</br></h2>
+        <p>Vous possédez les droits utilisateurs, vous pouvez donc ainsi gérer la messagerie, les commentaires et les annonces.</br></p>
+        <h3>Messagerie</h3>
+        <p>Dans vos catégories, un aperçu de la messagerie est disponible. Vous pouvez répondre en suivant ce lien : 
+            <a href="https://mailtrap.io/" target="_blank"><button type="button">Mailtrap</button></a></br>  
+        </p> 
+        <h3>Retour vers le site web</h3>
+        <p>Pour retourner sur le site web en restant connecter, veuillez cliquer <a href="{{ path('app_') }}">ici</a> </p>
+          
 </div>
 
 {% endblock %}

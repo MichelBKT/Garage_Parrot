@@ -6,6 +6,7 @@
 parameters:
     used_car_limit: 6
     comments_limit: 5
+    mail_app_url: "https://mailtrap.io/"
 services:
     # default configuration for services in *this* file
     _defaults:
