@@ -2,6 +2,7 @@
 
 namespace App\Controller\Users;
 
+use App\Repository\TimetableRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,10 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class UsersController extends AbstractController
 {
     #[Route('/user', name: 'app_user')]
-    public function index(): Response
+    public function index(TimetableRepository $timetableRepository): Response
     {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('users/dashboard.html.twig', [
+            'timetables' => $timetableRepository->findAll(),
         ]);
     }
 }
