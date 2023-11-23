@@ -30,6 +30,7 @@
         "@popperjs/core": "^2.11.8",
         "config.json": "^0.0.4",
         "intl-polyfill": "^0.0.3",
+        "minimist": "^1.2.8",
         "sequelize": "^6.35.1"
     }
 }
