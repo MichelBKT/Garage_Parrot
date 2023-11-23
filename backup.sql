@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 23 nov. 2023 à 05:39
+-- Généré le : jeu. 23 nov. 2023 à 08:04
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.2.12
 
@@ -37,7 +37,7 @@ CREATE TABLE `advert` (
   `doors_5` tinyint(1) NOT NULL,
   `fiscal_power` int NOT NULL,
   `co2_emission` int NOT NULL,
-  `user_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
   `image_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image_size` int DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL COMMENT '(DC2Type:datetime_immutable)'
@@ -168,7 +168,8 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20231122190405', '2023-11-22 19:06:11', 40);
+('DoctrineMigrations\\Version20231122190405', '2023-11-22 19:06:11', 40),
+('DoctrineMigrations\\Version20231123080114', '2023-11-23 08:01:22', 171);
 
 -- --------------------------------------------------------
 
@@ -248,7 +249,7 @@ CREATE TABLE `timetable` (
   `id` int NOT NULL,
   `day_week` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `user_id` int NOT NULL
+  `user_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
