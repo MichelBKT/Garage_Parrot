@@ -21,7 +21,7 @@ class Timetable
 
     #[ORM\ManyToOne(inversedBy: 'timetable')]
     #[ORM\JoinColumn]
-    private ?User $user = null;
+    private ?User $user;
 
 
     public function getId(): ?int
