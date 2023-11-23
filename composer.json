@@ -59,7 +59,11 @@
             "symfony/flex": true,
             "symfony/runtime": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "production": {
+            "dialect": "mysql",
+            "use_env_variable": "JAWSDB_URL"
+          }
     },
     "autoload": {
         "psr-4": {
