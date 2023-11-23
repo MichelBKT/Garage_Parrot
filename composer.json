@@ -62,8 +62,8 @@
         "sort-packages": true,
         "production": {
             "dialect": "mysql",
-            "use_env_variable": "JAWSDB_URL"
-          }
+            "use_env_variable": "JAWSDB_NAVY_URL"
+        }
     },
     "autoload": {
         "psr-4": {
