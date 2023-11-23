@@ -29,4 +29,8 @@ final class Version20231122190405 extends AbstractMigration
         $this->addSql('ALTER TABLE contact CHANGE email email VARCHAR(180) NOT NULL');
     }
 
+    public function isTransactional(): bool
+    {
+        return true;
+    }
 }
