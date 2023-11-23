@@ -20,7 +20,7 @@ class Timetable
     private ?string $time = null;
 
     #[ORM\ManyToOne(inversedBy: 'timetable')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn]
     private ?User $user = null;
 
 
