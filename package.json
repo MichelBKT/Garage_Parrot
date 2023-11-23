@@ -22,8 +22,8 @@
         "build": "encore production --progress"
     },
     "engines": {
-        "node": "v18.14.1.*",
-        "npm": "9.3.1.*"
+        "node": "^18.14.1",
+        "npm": "^9.3.1"
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8"
