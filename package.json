@@ -26,6 +26,7 @@
         "npm": "^9.3.1"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.8"
+        "@popperjs/core": "^2.11.8",
+        "intl-polyfill": "^0.0.3"
     }
 }
