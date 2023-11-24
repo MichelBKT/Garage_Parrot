@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\TimetableRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -30,8 +31,14 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
-    public function logout(): void
+    public function someAction(Security $security): Response
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        // you can also disable the csrf logout
+        $response = $security->logout(false);
+
+        // ... return $response (if set) or e.g. redirect to the homepage
+       if (isset ($response)) {
+            return $this->redirectToRoute('app_');
+        }
     }
 }
