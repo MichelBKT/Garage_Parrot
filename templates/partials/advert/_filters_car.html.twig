@@ -1,22 +1,10 @@
- <form class="col-lg-10">
+{{ form_start(form, {'attr': {'id': 'filters', 'class':"col-lg-6 mb-5"}}) }}>
     <div class="containerFilters shadow-lg">
         <p class="mx-5">
-            <label for="km" class="form-label text-light fw-semibold p-3">Kilométrage
-                <input type="range" class="form-range pi_input" min="0" max="250000" step="5000" id="km" />
-                <output class="value" id="km">125000</output>
-            </label>
-        </p>
-        <p class="mx-5">
-            <label for="prix" class="form-label text-light fw-semibold p-3">Prix
-                <input type="range" class="form-range pi_input1" min="1000" max="100000" step="1000" id="prix" />
-                <output class="value1" id="prix">25000</output>
-            </label>
-        </p>
-        <p class="mx-5">
-            <label for="co2" class="form-label text-light fw-semibold p-3">Emission CO2
-                <input type="range" class="form-range pi_input2" min="0" max="300" step="10" id="co2"/>
-                <output class="value2" id="co2">150</output>
-            </label>
+            {{ form_widget(form) }}
         </p>
     </div>
-</form> 
+{{ form_end(form) }}
+
+
+

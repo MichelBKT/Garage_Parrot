@@ -28,8 +28,11 @@
     "dependencies": {
         "@formatjs/intl-locale": "^3.4.3",
         "@popperjs/core": "^2.11.8",
+        "ajax": "^0.0.4",
+        "ajax-client": "^3.0.3",
         "config.json": "^0.0.4",
         "intl-polyfill": "^0.0.3",
+        "jquery": "^3.7.1",
         "minimist": "^1.2.8",
         "sequelize": "^6.35.1"
     }

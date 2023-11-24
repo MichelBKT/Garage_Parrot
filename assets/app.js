@@ -2,6 +2,7 @@
 import { start } from '@popperjs/core';
 import './styles/app.scss';
 require('bootstrap');
+import $ from "jquery";
 
 document.querySelectorAll(".nav-link").forEach((link) => {
     if (link.href === window.location.href) {
@@ -10,38 +11,54 @@ document.querySelectorAll(".nav-link").forEach((link) => {
     }
 });
 
-function valueChanged()
-{
-  const value = document.querySelector(".value");
-  const input = document.querySelector(".pi_input");
-  value.textContent = input.value;
-input.addEventListener("input", (event) => {
-  value.textContent = event.target.value;
+function startValueChanged() {
+  let url = window.location.href;
+  if (url.includes("/used/car")) {
+    $(document).ready(function() {
+      function filtrer() {
+        var data = $("#filters").serializeArray();
+        var json = {};
+        $.each(data, function(index, element) {
+          json[element.name] = element.value;
+        });
+        $.ajax({
+          url: "/used/car", 
+          method: "POST", 
+          dataType: "json",
+          data: JSON.stringify(json),
+          success: function(resultats) {
+            $("#resultats").empty();
+          },
+      error: function() { // Fonction à exécuter en cas d'erreur
+        // Affichage d'un message d'erreur
+        alert("Une erreur s'est produite lors de la requête Ajax");
+      }
+    });
+  }
+  
+  // Appel de la fonction filtrer au chargement de la page
+  filtrer();
+  
+  // Gestion de l'événement de changement de valeur des inputs de type range
+  $("input[type=range]").on("input", function() {
+    // Récupération de la valeur de l'input
+    var valeur = $(this).val();
+    
+    // Mise à jour du label ou du span qui affiche la valeur du filtre
+    $(this).next().text(valeur + " €");
+    
+    // Appel de la fonction filtrer
+    filtrer();
+  });
 });
 
-const value1 = document.querySelector(".value1");
-const input1 = document.querySelector(".pi_input1");
-value.textContent = input.value;
-input1.addEventListener("input", (event) => {
-  value1.textContent = event.target.value;
-});
-
-const value2 = document.querySelector(".value2");
-const input2 = document.querySelector(".pi_input2");
-value.textContent = input.value;
-input2.addEventListener("input", (event) => {
-  value2.textContent = event.target.value;
-});
 }
 
-function startValueChanged() {
-    let url = window.location.href;
-    if (url.includes("/used/car")) {
-        valueChanged();
-    }
+
 }
 
 startValueChanged();
+
 
 
 
