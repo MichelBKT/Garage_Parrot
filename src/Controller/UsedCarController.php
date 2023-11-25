@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Advert;
 use App\Form\FiltersType;
 use App\Repository\AdvertRepository;
 use App\Repository\TimetableRepository;
+use ContainerJOZVnxr\getPaginationRuntimeService;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UsedCarController extends AbstractController
 {
-    #[Route('/used/car', name: 'app_used_car')]
+    #[Route('/used/car/all', name: 'app_used_car')]
     public function index(TimetableRepository $timetableRepository, AdvertRepository $advertRepo,  PaginatorInterface $paginator, Request $request, ParameterBagInterface $parameterBagInterface, EntityManagerInterface $em): Response
     {
         //Gestion de la pagination
@@ -30,31 +32,28 @@ class UsedCarController extends AbstractController
         //Gestion des filtres
 
         $form = $this->createForm(FiltersType::class);
-        $content= $request->getContent();
+        $content = $request->getContent();
         if ($request->isXmlHttpRequest()) {
             if (!empty($content)) {
-                $data = json_decode($content, true);
-                $sql = "SELECT e FROM advert e WHERE e.price <= :price AND e.km <= :km AND e.co2_emission <= :co2_emission";
-                $query = $em->createQuery($sql);
-                $result = $query->execute([
-                    'price' => $data['price'],
-                    'km' => $data['km'],
-                    'co2_emission' =>$data['co2_emission']
-                ]);
-                $json = $this->json($result);
-                return $json;
-            }
+                dump($content);
+                //$data = json_decode($content, true);
+                
+            //$resultats = $advertRepo->findBySomeField($price, $km, $co2);}
+           // $json = $this->json($resultats);
+           // return $json;
         }
-
-        return $this->render('used_car/index.html.twig', [
-            'form' => $form->createView(),
-            'timetables' => $timetableRepository->findAll(),
-            'adverts' => $advert,
-            'pagination' => $advert->setCustomParameters([
-                'align' => 'right',
-                'style' => 'bg-dark',
-                'rounded' => true,
-            ]),
-        ]);
-    }
-}
+            
+            return $this->render('used_car/index.html.twig', [
+                'form' => $form->createView(),
+                'timetables' => $timetableRepository->findAll(),
+                'adverts' => $advert,
+                'pagination' => $advert->setCustomParameters([
+                    'align' => 'right',
+                    'style' => 'bg-dark',
+                    'rounded' => true,
+                ])
+            ]);
+        } 
+    }  
+}            
+            

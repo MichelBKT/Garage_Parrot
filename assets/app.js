@@ -14,7 +14,6 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 function startValueChanged() {
   let url = window.location.href;
   if (url.includes("/used/car")) {
-    $(document).ready(function() {
       function filtrer() {
         var data = $("#filters").serializeArray();
         var json = {};
@@ -22,25 +21,30 @@ function startValueChanged() {
           json[element.name] = element.value;
         });
         $.ajax({
-          url: "/used/car", 
+          url: "/used/car/all", 
           method: "POST", 
           dataType: "json",
           data: JSON.stringify(json),
           success: function(resultats) {
-            $("#resultats").empty();
-          },
-      error: function() { // Fonction à exécuter en cas d'erreur
-        // Affichage d'un message d'erreur
-        alert("Une erreur s'est produite lors de la requête Ajax");
-      }
-    });
+           
+            $.each(resultats, (_index, p) => {
+                // Création d'un élément HTML pour afficher chaque résultat
+                var element1 = $("#price");
+                element1.append(p.price + " €");
+                var element2 = $("#km");
+                element2.append(p.km + " km");
+                var element3 = $("#co2");
+                element3.append(p.co2_emission + " g/km");
+                $("#resultats").append([element1, element2, element3]);
+              });
+        },
+          error: function() { 
+              alert("Une erreur s'est produite lors de la requête Ajax");
+            }
+            });
   }
-  
-  // Appel de la fonction filtrer au chargement de la page
-  filtrer();
-  
   // Gestion de l'événement de changement de valeur des inputs de type range
-  $("input[type=range]").on("input", function() {
+  $("input[type=range]").on("mouseup", function() {
     // Récupération de la valeur de l'input
     var valeur = $(this).val();
     
@@ -50,15 +54,14 @@ function startValueChanged() {
     // Appel de la fonction filtrer
     filtrer();
   });
-});
-
 }
+};
 
 
-}
+
+
 
 startValueChanged();
-
 
 
 

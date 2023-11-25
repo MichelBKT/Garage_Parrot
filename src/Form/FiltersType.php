@@ -18,14 +18,19 @@ class FiltersType extends AbstractType
                 'attr' => [
                     'min' => 1000,
                     'max' => 100000,
-                    'value' => 50000
-                ]
+                    'step' => 500,
+                    'id' => 'price',
+                    'value' => 15000
+                ],
+
             ])
             ->add('km', RangeType::class, [
                 'label' => 'Kilométrage : ',
                 'attr' => [
                     'min' => 0,
                     'max' => 250000,
+                    'step' => 10000,
+                    'id' =>'km',
                     'value' => 125000
                 ]
             ])
@@ -34,6 +39,8 @@ class FiltersType extends AbstractType
                 'attr' => [
                     'min' => 0,
                     'max' => 300,
+                    'step' => 50,
+                    'id' => "co2",
                     'value' => 150
                 ]
             ])

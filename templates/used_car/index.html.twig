@@ -6,19 +6,18 @@
     <main class="container-fluid">
         <section class="row justify-content-center">
             <h1 class="col-lg-8 mt-3 p-3 text-success text-center shadow-lg rounded mb-5">Nos véhicules d'occasion</h1>
+            <pre>
+                {{ dump() }}
+            </pre>
             <div class="row justify-content-center">
                {% include "partials/advert/_filters_car.html.twig" %}
             </div>
         </section>
         <section>
-            <div class="row justify-content-center" id="resultats">
+            <div class="row justify-content-center" id="resultats"'>
                 {% include "partials/advert/_card.html.twig" %}
             </div>
     {{ knp_pagination_render(adverts) }}
         </section>
     </main>    
-{% endblock %}
-
-{% block javascripts %}
-    {{encore_entry_script_tags('app')}}
 {% endblock %}
