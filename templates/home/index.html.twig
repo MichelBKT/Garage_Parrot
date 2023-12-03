@@ -5,6 +5,7 @@
 {% block body %}
     <main class="row justify-content-center">
         <h1 class="col-lg-10 my-5 p-3 text-success text-center shadow-lg rounded">Derniers arrivages véhicules d'occasion</h1>
+        
         <div class="container">
             {% include "partials/advert/_carousel.html.twig" %}
         </div> 
@@ -18,6 +19,7 @@
                 <div class="row justify-content-center">
                     {% include "partials/home/_modal_comment.html.twig" %}
                 </div>
+                <div {{ react_component('Hello', { 'fullname': 'Michel'}) }}></div>
             </section>
     </main>
 </body>

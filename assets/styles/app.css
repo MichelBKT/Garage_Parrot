@@ -11874,34 +11874,20 @@ a {
 }
 
 .containerFilters {
+  width: 100vw;
   margin-bottom: 10%;
-  width: 75%;
-  text-align: center;
-  margin-left: 15%;
-}
-
-.containerFilters > p > label {
-  text-align: center;
-}
-
-.containerFilters > p {
-  margin: 0;
+  margin-left: 8%;
+  box-shadow: 10px 5px 5px #34332f;
 }
 
 @media screen and (min-width: 1025px) {
   .containerFilters {
-    margin-top: 3%;
-    margin-left: 10%;
-    margin-bottom: 3%;
-  }
-  .form-label {
-    width: 20%;
-  }
-  .containerFilters > p {
-    display: inline;
-  }
-  .containerFilters > p > label {
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+    margin-bottom: 10%;
+    margin-left: 0px;
+    margin-right: 5%;
   }
 }
 .atelier {

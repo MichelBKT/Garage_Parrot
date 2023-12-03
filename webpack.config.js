@@ -35,9 +35,14 @@ Encore
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
+    .enableReactPreset()
+
+    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+    //.enableStimulusBridge('./assets/controllers.json')
+
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
-    .enableSingleRuntimeChunk()
+    //.enableSingleRuntimeChunk()
 
     /*
      * FEATURE CONFIG
@@ -58,10 +63,10 @@ Encore
     // })
 
     // enables and configure @babel/preset-env polyfills
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = '3.23';
-    })
+    //.configureBabelPresetEnv((config) => {
+     //   config.useBuiltIns = 'usage';
+     //   config.corejs = '3.23';
+    //})
 
     // enables Sass/SCSS support
     .enableSassLoader()
@@ -70,7 +75,7 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you use React
-    //.enableReactPreset()
+    .enableReactPreset()
 
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher
@@ -78,6 +83,58 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
-;
 
-module.exports = Encore.getWebpackConfig();
+    //.configureBabel(function(babelConfig) {
+        // add additional presets
+       // babelConfig.presets.push('@babel/preset-react');
+
+        // no plugins are added by default, but you can add some
+        // babelConfig.plugins.push('styled-jsx/babel');
+        //babelConfig.plugins.push('transform-react-jsx/babel')
+   // }, {
+        // node_modules is not processed through Babel by default
+        // but you can allow some specific modules to be processed
+       // includeNodeModules: ['foundation-sites'],
+
+        // or completely control the exclude rule (note that you
+        // can't use both "includeNodeModules" and "exclude" at
+        // the same time)
+        // exclude: /bower_components/
+   // })
+;
+const path = require('path');
+
+module.exports = {
+  entry: path.resolve(__dirname, './assets/app.js'),
+  module: {
+    rules: [
+      {
+        test: /\.(jsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-react'],
+                plugins: ['@babel/plugin-transform-react-jsx'],
+                babelrc: true,
+                
+            }
+        }
+      },
+      { test: /\.css|scss$/, use: ['style-loader','css-loader', 'sass-loader'] },
+      { test: /\.(ts)$/, 
+        exclude : /node_modules/,
+        use: ['webpack-loader'],
+      },
+    ]
+  },
+  resolve: {
+    extensions: ['*', '.js']
+  },
+  output: {
+    path: path.resolve(__dirname, './public/build'),
+    filename: 'app.js',
+    
+  },
+  mode: 'development',
+}
