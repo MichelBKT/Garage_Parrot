@@ -11874,7 +11874,7 @@ a {
 }
 
 .containerFilters {
-  width: 100vw;
+  width: 85vw;
   margin-bottom: 10%;
   margin-left: 8%;
   box-shadow: 10px 5px 5px #34332f;
@@ -11888,6 +11888,10 @@ a {
     margin-bottom: 10%;
     margin-left: 0px;
     margin-right: 5%;
+    padding: 2%;
+  }
+  #toggle {
+    width: 20%;
   }
 }
 .atelier {
@@ -11969,4 +11973,8 @@ a {
 
 .phone {
   border-radius: 50%;
+}
+
+#toggle {
+  width: 45%;
 }/*# sourceMappingURL=app.css.map */

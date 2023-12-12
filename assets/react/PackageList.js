@@ -8,6 +8,8 @@ import Slider from '@mui/material/Slider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import axios from 'axios';
+
 
 export {
     Slider,
@@ -17,5 +19,7 @@ export {
     RangeSliderKm,
     RangeSliderMarks,
     Paper,
-    Typography
+    Typography,
+    axios,
+
 };

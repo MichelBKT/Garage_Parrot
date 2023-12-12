@@ -1,3 +1,8 @@
+const presets= [
+    [
+    '@babel/preset-react',
+    ]
+]
 
 const plugins = [
     [
@@ -18,9 +23,17 @@ const plugins = [
       },
       'icons',
     ],
+    [
+      'babel-plugin-import',
+      {
+        libraryName: '@babel/plugin-syntax-jsx',
+        libraryDirectory: '',
+        camel2DashComponentName: false,
+      }
+    ]
   ];
   
-module.exports = {plugins};
+module.exports = {presets, plugins};
 
 
 

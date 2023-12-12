@@ -1,11 +1,14 @@
- <form class="col-lg-10 justify-self-start">
-    <h2 class="text-center text-light mb-5">Filtres</h2>
-        <div>
-            <slider-component />
-        
-        </div>
+{% set queryParams = app.request.query.all %}
+{% set queryString = queryParams|filter((v, k) => k != "page")|url_encode %}
 
-</form> 
+<button type="button" class="btn btn-primary rounded text-light linkNav mb-5" id="toggle"><img src="{{asset('build/images/sliders.svg')}}" alt="bouton filtrer"> Filtrer</button>
+<form class="col-lg-10 justify-self-start" id="js-filter" name="filters">
+    <input type="hidden" name="page" id="currentPageNumber" value="{{adverts.currentPageNumber}}" />
+    <button type="button" class="btn btn-primary rounded text-light mb-2" id="toggle2"><img src="{{asset('build/images/ban.svg')}}" alt="voir tout"> Réinitialiser les filtres</button>
+    <slider-component />         
+</form>  
+
+
 
 
 

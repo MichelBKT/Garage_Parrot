@@ -1,78 +1,73 @@
 import * as React from 'react';
 import { Box, Paper, Slider, Grid, Typography } from '../PackageList.js';
 
+
+
+
 const marks = [
   {
     value: 0,
     label: '0',
   },
   {
-    value: 50000,
-    label: '50 000€',
+    value: 30000,
+    label: '30 000€',
   },
   {
-    value: 100000,
-    label: '100 000€',
+    value: 60000,
+    label: '60 000€',
   },
 ];
 
-function valuetext(value) {
-  return `${value}€`;
+function valuetext(price) {
+  return `${price}€`;
 }
-
-export default function RangeSliderMarks() {
-  const [value, setValue] = React.useState([10000, 25000]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  let minValue = value[0]
-  let maxValue = value[1]
-  const compareValue = (minValue, setValue) => {
-    (minValue <= setValue? minValue :setValue)
-  }
+function CompareValue(price,setPrice){
+  price<=setPrice? price :setPrice
+}
+export default function RangeSliderMarks(props) {
+  
   
 
   return (
     <Box sx={{ width: 320 }}>
     <Grid
       container 
-      spacing={2} 
-      columns={9}
+      spacing={0} 
+      columns={12}
       direction="row"
       justifyContent="start"
       alignItems="center"
     >
+
       <Grid item xs={3}>
-        <Typography>Prix (€): min</Typography>
+        <Typography>Prix (€): </Typography>
       </Grid>
       <Grid item xs={2}>
-        <Paper sx={{ width: 55}}
-                elevation={3}>{minValue}
-        </Paper>
+        <Paper sx={{ width: 54}} elevation={3} id='minPrice' name='minPrice' value={props.value[0]} onChange={props.onChange[0]}>{props.value[0]}</Paper>
       </Grid>
-      <Grid item xs={1}><Typography>max</Typography></Grid>
+      <Grid item xs={2}><Typography>min</Typography></Grid>         
       <Grid item xs={2}>
-        <Paper
-                sx={{ width: 55}}
-                elevation={3}>{maxValue}
-        </Paper>
+      <Paper sx={{ width: 54}} elevation={3} id='maxPrice' name='maxPrice' value={props.value[1]} onChange={props.onChange[1]}>{props.value[1]}</Paper>
       </Grid>
-    </Grid>
+      <Grid item xs={2}><Typography>max</Typography></Grid>
+      <Grid item xs={11}>
         <Slider
-          getAriaLabel={() => 'Temperature range'}
-          value={value}
-          onChange={handleChange}
+          getAriaLabel={() => 'price Range'}
+          value={props.value}
+          onChange={props.onChange}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
           marks={marks}
           color='warning'
           min={0}
-          max={100000}
+          max={60000}
           step={1000}
-          scale={compareValue(minValue, setValue)}
+          scale={CompareValue(props.value, props.onChange)}
+          id='priceRange'
         />
+      </Grid>
+    </Grid>
       </Box>
   );
 }

@@ -26,16 +26,22 @@ class AdvertRepository extends ServiceEntityRepository
    /**
      * @return Advert[] Returns an array of Advert objects
     */
-    public function findBySomeField($json): array
+    public function findAdvertsbyPrice($intMinPrice = null, $intMaxPrice = null): array
     {
-        return $this->createQueryBuilder('p')
-            ->select('p.price, p.km, p.co2_emission')
-            ->andWhere('p.id = :id')
-            ->setParameter('json' , $json)
-            ->getQuery()
-            ->getResult()
-        ;
+        $queryBuilder = $this->createQueryBuilder('a');
+
+        if ($intMinPrice != null | $intMaxPrice != null){
+            $queryBuilder   ->where('a.price >= :intMinPrice', 'a.price <= :intMaxPrice')
+                            ->setParameters(new ArrayCollection([
+                                new Parameter('intMinPrice', $intMinPrice),
+                                new Parameter('intMaxPrice', $intMaxPrice)
+                            ]));
+        }
+        return $queryBuilder->getQuery()->getResult();
     }
+        
+    
+ 
 
 
 //    public function findOneBySomeField($value): ?Advert

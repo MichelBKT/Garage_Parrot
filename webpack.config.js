@@ -23,7 +23,11 @@ Encore
 
     
     .addEntry('app', './assets/app.js')
-    
+
+    .copyFiles({
+        from:'./assets/ajax',
+        to: 'ajax/[path][name].[ext]',
+        })
     .copyFiles({
         from: './assets/images',
         to: 'images/[path][name].[ext]',
@@ -42,7 +46,7 @@ Encore
 
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
-    //.enableSingleRuntimeChunk()
+    .enableSingleRuntimeChunk()
 
     /*
      * FEATURE CONFIG
@@ -115,7 +119,6 @@ module.exports = {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-react'],
-                plugins: ['@babel/plugin-transform-react-jsx'],
                 babelrc: true,
                 
             }
@@ -138,3 +141,5 @@ module.exports = {
   },
   mode: 'development',
 }
+
+module.exports = Encore.getWebpackConfig();

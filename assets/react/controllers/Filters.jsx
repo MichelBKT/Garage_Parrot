@@ -1,18 +1,29 @@
 import { createRoot } from 'react-dom/client';
-import { Box, RangeSliderCo2, RangeSliderKm, RangeSliderMarks } from '../PackageList.js'
+import { RangeSliderCo2, RangeSliderKm, RangeSliderMarks } from '../PackageList.js'
 import * as React from 'react';
 
-  
-export default function Filters(){
-    return (
-        <div className='containerFilters'>
-                <RangeSliderMarks/>
-                <RangeSliderKm/>
-                <RangeSliderCo2/>
-        </div>
-    )
 
-}
+
+
+function Filters(){
+  const [price, setPrice] = React.useState([1000, 60000]);
+
+    const handleChange = (event = 'mouseup',  newValue) => {
+      setPrice(newValue)}
+    return <div className='containerFilters'>
+      <RangeSliderMarks id='price' name='price' value={price} onChange={handleChange}>{price}</RangeSliderMarks>
+
+      <RangeSliderKm/>
+      <RangeSliderCo2/>
+
+
+    </div>
+    }
+  
+       
+ export default Filters;
+
+
 
 class FilterElement extends HTMLElement {
     connectedCallback(){
@@ -22,3 +33,4 @@ class FilterElement extends HTMLElement {
     }
   }
   customElements.define("slider-component", FilterElement)
+

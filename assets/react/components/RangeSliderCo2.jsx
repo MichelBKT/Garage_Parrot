@@ -38,28 +38,29 @@ export default function RangeSliderCo2() {
     <Box sx={{ width: 320 }}>
       <Grid
       container 
-      spacing={2} 
-      columns={9}
+      spacing={0} 
+      columns={11}
       direction="row"
       justifyContent="start"
       alignItems="center"
     >
-      <Grid item xs={0}>
-          <Typography>Emission Co2: min</Typography>
+      <Grid item xs={4}>
+          <Typography>Emission Co2:</Typography>
       </Grid>
-      <Grid item>
+      <Grid item xs={2}>
         <Paper sx={{ width: 40}}
                 elevation={3}>{minValue}
         </Paper>
       </Grid>
-      <Grid item ><Typography>max</Typography></Grid>
+      <Grid item xs={1}><Typography>min</Typography></Grid>
       <Grid item xs={2}>
         <Paper
                 sx={{ width: 40}}
                 elevation={3}>{maxValue}
         </Paper>
       </Grid>
-    </Grid>
+    <Grid item xs={1}><Typography>max</Typography></Grid>
+    <Grid item xs={11}>
       <Slider
         label="Emission de Co2"
         getAriaLabel={() => 'Temperature range'}
@@ -74,6 +75,9 @@ export default function RangeSliderCo2() {
         step={10}
         scale={compareValue(minValue, setValue)}
       />
+      </Grid>
+      </Grid>
     </Box>
+
   );
 }

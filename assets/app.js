@@ -5,16 +5,19 @@ import './react/components/RangeSliderCo2.jsx';
 import './react/components/RangeSliderKm.jsx';
 import './react/components/RangeSliderMarks.jsx';
 
+
 import './react/PackageList.js';
 
 import './react/controllers/Filters.jsx';
 
 
 
+import './ajax/onFilter.js';
 
 // any CSS you import will output into a single css file (app.css in this case)
 
 import './styles/app.scss';
+
 require('bootstrap');
 
 

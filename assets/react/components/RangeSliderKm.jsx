@@ -42,28 +42,29 @@ export default function RangeSliderKm() {
     <Box sx={{ width: 320 }}>
       <Grid
       container 
-      spacing={2} 
-      columns={9}
+      spacing={0} 
+      columns={12}
       direction="row"
       justifyContent="start"
       alignItems="center"
     >
-      <Grid item xs={0}>
-          <Typography>Kilométrage: min</Typography>
+      <Grid item xs={4}>
+          <Typography>Kilométrage: </Typography>
       </Grid>
-      <Grid item>
-        <Paper sx={{ width: 55}}
+      <Grid item xs={2}>
+        <Paper sx={{ width: 54}}
                 elevation={3}>{minValue}
         </Paper>
       </Grid>
-      <Grid item ><Typography>max</Typography></Grid>
+      <Grid item xs={2}><Typography>min</Typography></Grid>
       <Grid item xs={2}>
         <Paper
-                sx={{ width: 55}}
+                sx={{ width: 54}}
                 elevation={3}>{maxValue}
         </Paper>
       </Grid>
-    </Grid>
+      <Grid item xs={1}><Typography>max</Typography></Grid>
+      <Grid item xs={11}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
         value={value}
@@ -77,6 +78,8 @@ export default function RangeSliderKm() {
         step={10000}
         scale={compareValue(minValue, setValue)}
       />
+      </Grid>
+      </Grid>
     </Box>
   );
 }
