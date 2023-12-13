@@ -2,7 +2,7 @@
 {% if comment.isOnline  == false %}
     {% else %}     
         {% if comment.rate == 5 %} 
-            <div class="col-8">
+            <div class="col-8 description">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 5 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 5 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 5 star" class="star">
@@ -11,7 +11,7 @@
             </div>
         {% endif %}
         {% if comment.rate == 4 %} 
-            <div class="col-8">
+            <div class="col-8 description">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 4 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 4 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 4 star" class="star">
@@ -22,7 +22,7 @@
             </div>
         {% endif %}
         {% if comment.rate == 3 %} 
-            <div class="col-8">
+            <div class="col-8 description">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 3 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 3 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 3 star" class="star">
@@ -33,7 +33,7 @@
             </div>
         {% endif %}
         {% if comment.rate == 2 %} 
-            <div class="col-8">
+            <div class="col-8 description">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 2 star" class="star">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 2 star" class="star">
                 <span>
@@ -44,7 +44,7 @@
             </div>
         {% endif %}
         {% if comment.rate == 1 %} 
-            <div class="col-8">
+            <div class="col-8 description">
                 <img src="{{ asset('build/images/star.svg') }}" alt="rate 1 star" class="star">
                 <span>
                     <img src="{{ asset('build/images/star-empty.svg') }}" alt="rate 1 star" class="star-empty">
@@ -54,7 +54,7 @@
                 </span>
             </div>
         {% endif %}
-        <div class="col-8 text-light">Avis posté par : {{ comment.nickname }}</div> 
-        <div class="col-8 text-primary mb-3"> {{ comment.designation | raw }}</div></br>    
+        <div class="col-8 text-success fw-bold description">Avis posté par : {{ comment.nickname }}</div> 
+        <div class="col-8 text-light fw-bold mb-3 description"> {{ comment.designation | raw }}</div></br>    
 {% endif %}
 {% endfor %}

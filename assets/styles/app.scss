@@ -2,7 +2,7 @@
 
 // customize some Bootstrap variables
 $primary: #554c3b;
-$secondary: #a5a293;
+$secondary: rgba(80, 100, 111, 0.6);
 $success: #FDB402;
 $info: #58f544;
 $dark: #1C1A1D;
@@ -10,9 +10,19 @@ $light:#eeebc1;
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+body {
+  background-image: url(../images/background2.jpg);
+  background-size: cover;
+  max-width: 100%;
+  height : auto;
+  margin: 0;
+  padding: 0;
+
+
+}
 .linkNav {
     font-family: 'Audiowide', cursive;
-    font-size: 0.98em;
+    font-size: 0.95em;
 }
 
 h1, h2 {
@@ -28,25 +38,15 @@ a {
     border-bottom: solid 2px $success;
   }
 
-.containerFilters{
-  width: 85vw;
-  margin-bottom: 10%;
-  margin-left: 8%;
-  box-shadow: 10px 5px 5px #34332f;
-}
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1402px) {
   .containerFilters{
     display: flex;
     justify-content: space-evenly;
-    width: 90vw;
-    margin-bottom: 10%;
+    height: auto;
     margin-left: 0px;
     margin-right: 5%;
     padding: 2%;
-  }
-  #toggle{
-    width: 20%;
   }
  
   
@@ -70,7 +70,6 @@ a {
 .slide-4,
 .slide-5 {
   margin-left: 30vw;
-  background-color: $secondary ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -83,8 +82,7 @@ a {
   .slide-3,
   .slide-4,
   .slide-5 {
-  margin-left: 10vw;
-  background-color: $secondary ;
+  margin-left: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -98,7 +96,6 @@ a {
   .slide-3,
   .slide-4,
   .slide-5 {
-  background-color: $secondary ;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,17 +112,14 @@ a {
 }
 
 .clé-molette {
-  border-radius: 30%;
-}
-
-.maintenanceList {
-  list-style: none;
-  color: $success;
+  border-radius: 80%;
+  width: 20%;
+  height: auto;
 }
 
 .serviceList {
+  background:  rgba(79, 99, 109, 0.6);
   list-style: none;
-  color: $success;
 }
 
 .formu-contact{
@@ -139,4 +133,13 @@ a {
 
 #toggle{
   width: 45%;
+}
+
+.description{
+  text-align: justify;
+  background: rgba(79, 99, 109, 0.6);
+}
+
+.orangeTitle{
+  background: rgba(253, 182, 2, 0.6);
 }

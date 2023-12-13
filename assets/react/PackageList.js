@@ -8,7 +8,9 @@ import Slider from '@mui/material/Slider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import axios from 'axios';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 
 export {
@@ -20,6 +22,8 @@ export {
     RangeSliderMarks,
     Paper,
     Typography,
-    axios,
+    FormGroup,
+    FormControlLabel,
+    Checkbox
 
 };

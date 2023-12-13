@@ -38,6 +38,7 @@ export default function RangeSliderMarks(props) {
       direction="row"
       justifyContent="start"
       alignItems="center"
+      className='text-success fw-bold'
     >
 
       <Grid item xs={3}>

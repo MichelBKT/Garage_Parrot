@@ -18,27 +18,27 @@ class ContactType extends AbstractType
         $builder
             ->add('last_name', TextType::class, [
                 'label' => 'Nom',
-                'label_attr' => ['class'=> 'text-light'],
+                'label_attr' => ['class'=> 'text-light description rounded'],
                 'required' => true,
             ])
             ->add('first_name', TextType::class, [
                 'label' => 'Prénom',
-                'label_attr' => ['class' => 'text-light'],
+                'label_attr' => ['class' => 'text-light description rounded'],
                 'required' => true,
             ])
             ->add('email', EmailType::class, [
                 'label' => 'E-mail',
-                'label_attr' => ['class' => 'text-light'],
+                'label_attr' => ['class' => 'text-light description rounded'],
                 'required' => true,
             ])
             ->add('object', TextType::class, [
                 'label' => 'Objet',
-                'label_attr' => ['class' => 'text-light'],
+                'label_attr' => ['class' => 'text-light description rounded'],
             ])
             ->add('subject', TextareaType::class, [
                 'label' => 'Message',
                 'required' => true,
-                'label_attr' => ['class' => 'text-light col'],
+                'label_attr' => ['class' => 'text-light description rounded col'],
                 'row_attr' => [ 'class' => 'col']
             ])
             ->add('is_reading', HiddenType::class ,[

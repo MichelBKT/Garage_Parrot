@@ -2,11 +2,11 @@
 {% set queryString = queryParams|filter((v, k) => k != "page")|url_encode %}
 
 {% for advert in adverts %}
-<div class="col-4 card border-dark bg-secondary mb-5 mx-5" style="width: 20rem;">
+<div class="col-4 card border-dark description my-5 mx-5" style="width: 20rem;">
     {% include "partials/advert/_car_picture_card.html.twig" %}
     <div class="card-body">
         <p class="card-title text-success fw-semibold linkNav text-center">{{ advert.title}}</br></br></p>
-        <p class="card-text fw-semibold border-top text-primary text-center linkNav" id="js-price">Prix : {{ advert.price }}€ </p>
+        <p class="card-text fw-semibold border-top text-success text-center linkNav" id="js-price">Prix : {{ advert.price }}€ </p>
         <p class="card-text text-light fw-semibold">Kilométrage : {{ advert.km }} km</p>
         <p class="card-text text-light fw-semibold">Emission Co2 : {{ advert.co2Emission }} g/km</p>
         <a 
@@ -20,10 +20,10 @@
 {% endfor %}
 
    {% if queryString is empty %}
-            <div class="pagination">     
-    {{ knp_pagination_render(adverts) }}
-    </div>  
-        {% endif %}
+        <div class="pagination row">     
+            {{ knp_pagination_render(adverts) }}
+        </div>  
+    {% endif %}
 
 
 

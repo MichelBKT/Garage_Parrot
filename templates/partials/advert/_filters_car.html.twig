@@ -1,10 +1,10 @@
 {% set queryParams = app.request.query.all %}
 {% set queryString = queryParams|filter((v, k) => k != "page")|url_encode %}
 
-<button type="button" class="btn btn-primary rounded text-light linkNav mb-5" id="toggle"><img src="{{asset('build/images/sliders.svg')}}" alt="bouton filtrer"> Filtrer</button>
-<form class="col-lg-10 justify-self-start" id="js-filter" name="filters">
+<button type="button" class="btn btn-outline-primary rounded text-light linkNav mb-5 w-25" id="toggle"><img src="{{asset('build/images/sliders.svg')}}" alt="bouton filtrer"> Filtrer</button>
+<form class="col-12 justify-self-start description" id="js-filter" name="filters">
     <input type="hidden" name="page" id="currentPageNumber" value="{{adverts.currentPageNumber}}" />
-    <button type="button" class="btn btn-primary rounded text-light mb-2" id="toggle2"><img src="{{asset('build/images/ban.svg')}}" alt="voir tout"> Réinitialiser les filtres</button>
+    <button type="button" class="btn btn-outline-secondary rounded text-light mb-2" id="toggle2"><img src="{{asset('build/images/ban.svg')}}" alt="voir tout"> Réinitialiser les filtres</button>
     <slider-component />         
 </form>  
 

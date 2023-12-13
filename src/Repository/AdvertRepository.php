@@ -26,15 +26,18 @@ class AdvertRepository extends ServiceEntityRepository
    /**
      * @return Advert[] Returns an array of Advert objects
     */
-    public function findAdvertsbyPrice($intMinPrice = null, $intMaxPrice = null): array
+    public function findAdvertsbyFilters($intMinPrice = null, $intMaxPrice = null, $intMinKm = null, $intMaxKm = null): array
     {
         $queryBuilder = $this->createQueryBuilder('a');
 
-        if ($intMinPrice != null | $intMaxPrice != null){
-            $queryBuilder   ->where('a.price >= :intMinPrice', 'a.price <= :intMaxPrice')
+        if ($intMinPrice != null | $intMaxPrice != null | $intMinKm != null | $intMaxKm != null ){
+            $queryBuilder   ->where('a.price >= :intMinPrice', 'a.price <= :intMaxPrice', 'a.km >= :intMinKm', 'a.km <= :intMaxKm')
                             ->setParameters(new ArrayCollection([
                                 new Parameter('intMinPrice', $intMinPrice),
-                                new Parameter('intMaxPrice', $intMaxPrice)
+                                new Parameter('intMaxPrice', $intMaxPrice),
+                                new Parameter('intMinKm', $intMinKm),
+                                new Parameter('intMaxKm', $intMaxKm),
+
                             ]));
         }
         return $queryBuilder->getQuery()->getResult();

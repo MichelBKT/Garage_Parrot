@@ -4,22 +4,21 @@
 
 {% block body %}
     <main class="row justify-content-center">
-        <h1 class="col-lg-10 my-5 p-3 text-success text-center shadow-lg rounded">Derniers arrivages véhicules d'occasion</h1>
+        <h1 class="col-lg-8 my-5 p-3 text-success text-center fw-bold shadow-lg rounded description">Derniers arrivages véhicules d'occasion</h1>
         
         <div class="container">
             {% include "partials/advert/_carousel.html.twig" %}
         </div> 
             {% include "partials/home/_block_presentation.html.twig" %}
-            </section>
-            <section class="container-fluid">
+            <div class="container-fluid">
                 <div class="row justify-content-center mb-5">
-                    <h2 class="col-6  bg-success shadow-lg text-center rounded my-5 mt-5 ">Avis clients</h2>
+                    <h2 class="col-6 shadow-lg text-center rounded my-5 mt-5 orangeTitle">Avis clients</h2>
                     {% include "partials/home/_block_comment.html.twig" %}
                 </div>
                 <div class="row justify-content-center">
                     {% include "partials/home/_modal_comment.html.twig" %}
                 </div>
-            </section>
+            </div>
     </main>
 </body>
 {% endblock %}

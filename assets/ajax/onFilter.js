@@ -15,14 +15,19 @@ toggle != null ? toggle.addEventListener("click", () => {
 
 window.onload = () => {
   const FiltersForm = document.querySelector("#js-filter") 
-  const FilterSelect = document.querySelectorAll("#js-filter #priceRange span")
+  const FilterSelect= document.querySelectorAll("#js-filter span")
   FilterSelect.forEach(input => {
     input.addEventListener("mouseup", () => {
       const Form = new FormData(FiltersForm);
       let minPriceValue = document.querySelector("#minPrice").outerText
       let maxPriceValue = document.querySelector("#maxPrice").outerText
+      let minKmValue = document.querySelector("#minKm").outerText
+      let maxKmValue = document.querySelector("#maxKm").outerText
       Form.append("minPrice", minPriceValue)
       Form.append("maxPrice", maxPriceValue)
+      Form.append("minKm", minKmValue)
+      Form.append("maxKm", maxKmValue)
+
       const Params = new URLSearchParams();
       Form.forEach((value, key) => {
         Params.append(key, value)
@@ -40,8 +45,8 @@ window.onload = () => {
           
           history.pushState({}, null, Url.pathname + "?" + Params.toString())
         }).catch(e => alert(e))
-              })
-           })
+    })
+  })
 }
 let toggle2 = document.getElementById("toggle2");
 toggle2 != null ? toggle2.addEventListener("click", () => {
