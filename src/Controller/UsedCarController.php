@@ -27,14 +27,17 @@ class UsedCarController extends AbstractController
         $intMinKm = (int)$filterMinKm;
         $filterMaxKm = $request->get('maxKm');
         $intMaxKm = (int)$filterMaxKm;
-
+        $filterMinCo2 = $request->get('minCo2');
+        $intMinCo2 = (int)$filterMinCo2;
+        $filterMaxCo2 = $request->get('maxCo2');
+        $intMaxCo2 = (int)$filterMaxCo2;
         
         if($request->get('ajax')) {
-            $advert = $advertRepo->findAdvertsbyFilters($intMinPrice, $intMaxPrice, $intMinKm, $intMaxKm); 
+            $advert = $advertRepo->findAdvertsbyFilters($intMinPrice, $intMaxPrice, $intMinKm, $intMaxKm, $intMinCo2, $intMaxCo2); 
             return new JsonResponse([
                 'content' => $this->renderView('partials/advert/_card.html.twig', [
                     'adverts' => $advert,
-                    'price' => $advertRepo->findAdvertsbyFilters($intMinPrice, $intMaxPrice, $intMinKm, $intMaxKm),
+                    'price' => $advertRepo->findAdvertsbyFilters($intMinPrice, $intMaxPrice, $intMinKm, $intMaxKm,$intMinCo2, $intMaxCo2),
                     ])
                 ]);
             }  

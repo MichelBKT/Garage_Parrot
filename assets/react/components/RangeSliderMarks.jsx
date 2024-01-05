@@ -2,8 +2,6 @@ import * as React from 'react';
 import { Box, Paper, Slider, Grid, Typography } from '../PackageList.js';
 
 
-
-
 const marks = [
   {
     value: 0,
@@ -38,7 +36,7 @@ export default function RangeSliderMarks(props) {
       direction="row"
       justifyContent="start"
       alignItems="center"
-      className='text-success fw-bold'
+      className='text-warning fw-bold'
     >
 
       <Grid item xs={3}>

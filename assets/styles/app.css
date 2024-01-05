@@ -11908,13 +11908,26 @@ a {
 .slide-3,
 .slide-4,
 .slide-5 {
-  margin-left: 30vw;
+  margin-left: 33vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 426px) and (max-width: 991px) {
+  .slide-1,
+  .slide-2,
+  .slide-3,
+  .slide-4,
+  .slide-5 {
+    margin-left: 15vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 35vh;
+  }
+}
+@media screen and (max-width: 425px) {
   .slide-1,
   .slide-2,
   .slide-3,
@@ -11977,5 +11990,5 @@ a {
 }
 
 .orangeTitle {
-  background: rgba(253, 182, 2, 0.6);
+  background: rgba(253, 182, 2, 0.8);
 }/*# sourceMappingURL=app.css.map */

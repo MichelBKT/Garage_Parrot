@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { Box, Slider, Paper, Grid, Typography } from '../PackageList.js';
 
-
-
-
-
-
 const marks = [
   {
     value: 0,
@@ -40,7 +35,7 @@ export default function RangeSliderKm(props) {
       direction="row"
       justifyContent="start"
       alignItems="center"
-      className='text-success fw-bold'
+      className='text-warning fw-bold'
     >
       <Grid item xs={4}>
           <Typography>Kilométrage: </Typography>
