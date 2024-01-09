@@ -17,7 +17,7 @@ window.onload = () => {
   const FiltersForm = document.querySelector("#js-filter") 
   const FilterSelect= document.querySelectorAll("#js-filter span")
   FilterSelect.forEach(input => {
-    input.addEventListener("mouseup", () => {
+    input.addEventListener("pointerup", () => {
       const Form = new FormData(FiltersForm);
       let minPriceValue = document.querySelector("#minPrice").outerText
       let maxPriceValue = document.querySelector("#maxPrice").outerText
