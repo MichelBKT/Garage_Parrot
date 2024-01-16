@@ -7,42 +7,43 @@
         <div class="row justify-content-center">
             <h1 class="col-lg-8 mx-5 p-3 text-success text-center description shadow-lg rounded mb-5">Entretiens et services</h1>
             </br></br>
-        <div class="row justify-content-center">
-            <h2 class="col-6 orangeTitle text-center fw-bold shadow-lg rounded my-5">Entretiens</h2>
             <div class="row justify-content-center">
-                <p class="col-lg-6 p-3 text-light fw-bold shadow-lg rounded description">Confier régulièrement votre véhicule à votre
-                    concessionnaire Parrot pour l'entretien et les révisions vous permet de le conserver dans un état optimal.
-                    L'entretien permet de garantir les performances de votre moteur, d'améliorer la consommation de carburant et de
-                    réduire les émissions de CO2. Outre réaliser des économies, il vous permet de rester serein, confiant dans la
-                    sécurité et la fiabilité de votre automobile.</br></br>Vous bénéficierez de l'expertise de techniciens qualifiés, de 
-                    pièces d'origine.</br></br><strong>Nous recommandons une révision annuelle ou tous les 30 000 km.</strong></br></br>Votre 
-                    réparateur Parrot agréé contrôle les éléments suivants :
-                </p>
-                <ul class="serviceList col-lg-8 row row-cols-2 p-3 text-white shadow-lg rounded">
-                    {% for maintenance in maintenances %}
-                        <li class="text-light fw-bold col-lg-4 p-3 p-lg-0">
-                        <img src="{{ asset('build/images/wrench.svg') }}"  alt="puce">
-                            {{ maintenance.designation }}
-                        </li>  
-                    {% endfor %}
-                </ul>
+                <h2 class="col-6 orangeTitle text-center fw-bold shadow-lg rounded my-5">Entretiens</h2>
+                <div class="row justify-content-center">
+                    <p class="col-lg-6 p-3 text-light fw-bold shadow-lg rounded description">Confier régulièrement votre véhicule à votre
+                        concessionnaire Parrot pour l'entretien et les révisions vous permet de le conserver dans un état optimal.
+                        L'entretien permet de garantir les performances de votre moteur, d'améliorer la consommation de carburant et de
+                        réduire les émissions de CO2. Outre réaliser des économies, il vous permet de rester serein, confiant dans la
+                        sécurité et la fiabilité de votre automobile.</br></br>Vous bénéficierez de l'expertise de techniciens qualifiés, de
+                        pièces d'origine.</br></br><strong>Nous recommandons une révision annuelle ou tous les 30 000 km.</strong></br></br>Votre
+                        réparateur Parrot agréé contrôle les éléments suivants :
+                    </p>
+                    <ul class="serviceList col-lg-8 row row-cols-2 p-3 text-white shadow-lg rounded">
+                        {% for maintenance in maintenances %}
+                            <li class="text-light fw-bold col-lg-4 p-3 p-lg-0">
+                            <img src="{{ asset('build/images/wrench.svg') }}"  alt="puce">
+                                {{ maintenance.designation }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <h2 class="col-6 orangeTitle text-center fw-bold shadow-lg rounded my-5">Services</h2>
             <div class="row justify-content-center">
-                <p class="col-lg-6 p-3 text-light fw-bold shadow-lg rounded description">Parrot Automobiles peut vous prêter un véhicule de 
-                        courtoisie en cas d'immobilisation de plus d'une journée. Tous types de réparations peuvent être effectuées 
-                        multi-marques.</br> Voici une liste non exhaustive des prestations :
-                </p>
-                <ul class="serviceList col-lg-8 row row-cols-2 p-3 text-white shadow-lg rounded">
-                    {% for service in services %}
-                        <li class="text-light col-lg-4 p-3 p-lg-0 fw-bold">
-                        <img src="{{ asset('build/images/screw-wrench.svg') }}"  alt="puce">
-                            {{ service.designation }}
-                        </li>
-                    {% endfor %}
-                </ul>
+                <h2 class="col-6 orangeTitle text-center fw-bold shadow-lg rounded my-5">Services</h2>
+                <div class="row justify-content-center">
+                    <p class="col-lg-6 p-3 text-light fw-bold shadow-lg rounded description">Parrot Automobiles peut vous prêter un véhicule de
+                            courtoisie en cas d'immobilisation de plus d'une journée. Tous types de réparations peuvent être effectuées
+                            multi-marques.</br> Voici une liste non exhaustive des prestations :
+                    </p>
+                    <ul class="serviceList col-lg-8 row row-cols-2 p-3 text-white shadow-lg rounded">
+                        {% for service in services %}
+                            <li class="text-light col-lg-4 p-3 p-lg-0 fw-bold">
+                            <img src="{{ asset('build/images/screw-wrench.svg') }}"  alt="puce">
+                                {{ service.designation }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
