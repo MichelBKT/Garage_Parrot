@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/advert.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/comment.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/contact.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/doctrine_migration_versions.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/maintenance.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/messenger_messages.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/service.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/timetable.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/user.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/../../data/mysql-8/parrot_garage/zv43f66dagrbavf0/workplace.sql" dialect="MySQL" />
+  </component>
+</project>
