@@ -2,10 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { RangeSliderCo2, RangeSliderKm, RangeSliderMarks } from '../PackageList.js'
 import * as React from 'react';
 
-
-
-
-function Filters(){
+export default function Filters(){
   const [price, setPrice] = React.useState([1000, 60000]);
   const [km, setKm] = React.useState([0, 200000]);
   const [co2, setCo2] = React.useState([0, 300]);
@@ -26,11 +23,6 @@ function Filters(){
 
     </div>
     }
-  
-       
- export default Filters;
-
-
 
 class FilterElement extends HTMLElement {
     connectedCallback(){

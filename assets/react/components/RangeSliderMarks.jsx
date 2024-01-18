@@ -62,7 +62,9 @@ export default function RangeSliderMarks(props) {
           >{props.value[1]}
           </Paper>
         </Grid>
-        <Grid item xs={2}><Typography>max</Typography></Grid>
+        <Grid item xs={2}>
+          <Typography>max</Typography>
+        </Grid>
         <Grid item xs={11}>
           <Slider
             getAriaLabel={() => 'price Range'}
