@@ -8,7 +8,8 @@ parameters:
     comments_limit: 5
     inf_critair_co2_limit: 149
     sup_critair_co2_limit: 150
-
+    router.request_context.scheme: 'https'
+    asset.request_context.secure: true
 
     mail_app_url: "https://mailtrap.io/"
 services:
