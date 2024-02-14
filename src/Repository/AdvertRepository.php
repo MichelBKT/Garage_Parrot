@@ -26,12 +26,15 @@ class AdvertRepository extends ServiceEntityRepository
    /**
      * @return Advert[] Returns an array of Advert objects
     */
-    public function findAdvertsbyFilters($intMinPrice = null, $intMaxPrice = null, $intMinKm = null, $intMaxKm = null, $intMinCo2 = null, $intMaxCo2 = null): array
+    public function findAdvertsbyFilters($intMinPrice = null, $intMaxPrice = null, $intMinKm = null, $intMaxKm = null,
+                                         $intMinCo2 = null, $intMaxCo2 = null): array
     {
         $queryBuilder = $this->createQueryBuilder('a');
 
-        if ($intMinPrice != null | $intMaxPrice != null | $intMinKm != null | $intMaxKm != null | $intMinCo2 != null | $intMaxCo2 != null ){
-            $queryBuilder   ->where('a.price >= :intMinPrice', 'a.price <= :intMaxPrice', 'a.km >= :intMinKm', 'a.km <= :intMaxKm', 'a.co2_emission >= :intMinCo2', 'a.co2_emission <= :intMaxCo2')
+        if ($intMinPrice != null | $intMaxPrice != null | $intMinKm != null | $intMaxKm != null | $intMinCo2 != null |
+            $intMaxCo2 != null ){
+            $queryBuilder   ->where('a.price >= :intMinPrice', 'a.price <= :intMaxPrice', 'a.km >= :intMinKm',
+                                'a.km <= :intMaxKm', 'a.co2_emission >= :intMinCo2', 'a.co2_emission <= :intMaxCo2')
                             ->setParameters(new ArrayCollection([
                                 new Parameter('intMinPrice', $intMinPrice),
                                 new Parameter('intMaxPrice', $intMaxPrice),

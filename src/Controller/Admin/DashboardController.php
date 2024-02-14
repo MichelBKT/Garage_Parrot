@@ -43,7 +43,8 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Garage Parrot');
+            ->setTitle('Garage Parrot')
+            ->generateRelativeUrls();
             
             
     }
