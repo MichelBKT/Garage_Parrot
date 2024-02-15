@@ -1,6 +1,5 @@
 # Projet Garage Vincent Parrot - ECF 2024
 
------------------------------------------------------------------------------------------------------------------------
 
 Ce projet est une évaluation en cours de formation nécessaire pour l'obtenttion du TP développeur web et web mobile.
 
@@ -19,12 +18,12 @@ son application :
 Les employés, quant à eux, disposeront aussi de leur espace personnel pour gérer quelques fonctionnalités du site web. 
 Ils auront un accès restreint à cette interface.
 
------------------------------------------------------------------------------------------------------------------------
+
 ## Lien vers la version en ligne :
 
 **https://www.garagevparrot-ecf.me**
 
------------------------------------------------------------------------------------------------------------------------
+
 
 ## Installation en local :
 
@@ -71,7 +70,7 @@ Lancez votre serveur web et votre serveur MySQL
 
 Créez ensuite la BDD avec la commande :
     
-    symfony console doctrine:databse:create
+    symfony console doctrine:database:create
 
 Enfin, sur PHPmyAdmin, importez les données présentes en annexe de la copie en PDF page 15 à 21 pour vous éviter la saisie des tables
 manuellement.
