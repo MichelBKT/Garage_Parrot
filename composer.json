@@ -12,7 +12,7 @@
         "doctrine/doctrine-bundle": "^2.11.1",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.18",
-        "easycorp/easyadmin-bundle": "^4.8.13",
+        "easycorp/easyadmin-bundle": "^4.9.1",
         "knplabs/knp-paginator-bundle": "^6.3",
         "monolog/monolog": "^3.5",
         "paragonie/sodium_compat": "^1.20",

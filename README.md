@@ -57,7 +57,7 @@ installez npm :
 
 et exécutez la commande suivante :
 
-    npm run build --dev
+    npm run build
 
 
 
@@ -72,25 +72,15 @@ Créez ensuite la BDD avec la commande :
     
     symfony console doctrine:database:create
 
-Enfin, sur PHPmyAdmin, importez les données présentes en annexe de la copie en PDF page 15 à 21 pour vous éviter la saisie des tables
-manuellement.
 
-***Note : j'ai créé moi-même les tables avec doctrine et injecté les données avec des insertions mySQL que j'ai créé 
-moi-même. Je mets donc à votre disposition ce fichier d'import pour facilité votre intégration locale.***
+Exécutez cette commande pour importer les tables et les relations :
 
-En cas de problème, vous pouvez suivre ces étapes, mais les data ne seront pas insérées :
-* créez les tables et les relations en utilisant le diagramme de classe fournit avec la copie et des entités présentes
-dans le dossier src de l'application
-
-* 
-        symfony console make:migration
+*
         symfony console doctrine:migrations:migrate
 *  connectez vous à la BDD à l'aide de DataGrip ou de PHPmyAdmin
-  *  pour créez un administrateur et ainsi avoir accès au back-end :
+*  importez le fichier data.sql présent à la racine du projet
+  *  pour créer un administrateur et ainsi avoir accès au back-end :
 
-      * commencez par créer un poste de travail (workplace) 
-
-             INSERT INTO workplace (id, designation) VALUES (1, 'gérant');
       * créer l'utilisateur :
 
             INSERT INTO user (id, workplace_id, email, roles, password, first_name, last_name) VALUES (1, 1, 
