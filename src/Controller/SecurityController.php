@@ -31,7 +31,7 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
-    public function someAction(Security $security): Response
+    public function someAction(Security $security, TimetableRepository $timetableRepository): Response
     {
         // you can also disable the csrf logout
         $response = $security->logout(false);
@@ -39,6 +39,9 @@ class SecurityController extends AbstractController
         // ... return $response (if set) or e.g. redirect to the homepage
        if (isset ($response)) {
             return $this->redirectToRoute('app_');
-        }
+       }
+        return $this->render('home/index.html.twig', [
+            'timetables' => $timetableRepository->findAll(),
+        ]);
     }
 }
