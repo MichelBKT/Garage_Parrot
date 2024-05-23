@@ -17,7 +17,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class PageController extends AbstractController
 {
     #[Route('/', name: 'app_', methods: ['GET', 'POST'])]
-    public function index(TimetableRepository $timetableRepository, ParameterBagInterface $parameterBagInterface, AdvertRepository $advertRepo, CommentRepository $commentRepository, Request $request, EntityManagerInterface $em): Response
+    public function index(TimetableRepository $timetableRepository, ParameterBagInterface $parameterBagInterface,
+                          AdvertRepository $advertRepo, CommentRepository $commentRepository, Request $request,
+                          EntityManagerInterface $em): Response
     {       
         $limit = $parameterBagInterface->get('comments_limit');
         $commentRepository = $commentRepository->findBy(['is_online' => 'true'],[],$limit);
@@ -29,7 +31,10 @@ class PageController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
           $em->persist($comment);
           $em->flush();
-          $this->addFlash('success', "<strong>Commentaire envoyé avec succès</strong> </br> Il sera visible après modération.");
+          $this->addFlash(
+              'success',
+              "<strong>Commentaire envoyé avec succès</strong> </br> Il sera visible après modération."
+          );
         }
 
         return $this->render('home/index.html.twig', [

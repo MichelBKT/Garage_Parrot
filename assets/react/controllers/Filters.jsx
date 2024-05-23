@@ -31,5 +31,5 @@ class FilterElement extends HTMLElement {
 
     }
   }
-  customElements.define("slider-component", FilterElement)
+  customElements.define("range-components", FilterElement)
 

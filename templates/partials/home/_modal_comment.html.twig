@@ -1,13 +1,29 @@
-<button type="button" class="btn btn-outline-success col-lg-3 col-6 linkNav mb-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-Poster un avis
+<button
+        type="button"
+        class="btn btn-dark btn-outline-success col-lg-3 col-6 linkNav mb-5"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+>
+    Poster un avis
 </button>
 <form method="post">
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+    >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark">
-                    <h3 class="modal-title fs-5 text-success linkNav" id="staticBackdropLabel">Poster un avis sur votre Garage Parrot</h3>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title fs-5 text-success linkNav" id="staticBackdropLabel">
+                        Poster un avis sur votre Garage Parrot
+                    </h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
                 </div>
                 <div class="modal-body bg-secondary">
                     {{ form_start(form) }}
@@ -16,9 +32,11 @@ Poster un avis
                             {{ form_row(form.designation) }} 
                     {{ form_end(form) }}
                 </div>
-            <div class="modal-footer bg-dark">
-            <button type="submit" class="btn btn-outline-info" >Envoyer</button>
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fermer</button>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-outline-info" >Envoyer</button>
+                </div>
+            </div>
         </div>
     </div>
 </form>

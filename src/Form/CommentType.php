@@ -28,15 +28,12 @@ class CommentType extends AbstractType
                 ],
                 'label' => 'Choisir une note',
                 'label_attr' => ['class'=> " text-light my-2"],
-                
-                
-
             ])
             ->add('nickname', TextType::class, [
                 'label' => 'Pseudo',
                 'required' => true,
                 'attr' => ['class' => "my-2 form-control-md"],
-                'label_attr' => ['class'=> "my-2 text-light"]
+                'label_attr' => ['class'=> "my-2 text-light"],
             ])
             ->add('designation', TextareaType::class, [
                 'label' => 'Poster un commentaire',
@@ -44,7 +41,7 @@ class CommentType extends AbstractType
                 'label_attr' => ['class'=> "my-2 text-light"],
             ])
             ->add('is_online', HiddenType::class, [
-                'empty_data' => false
+                'empty_data' => false,
             ])
         ;
     }

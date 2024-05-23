@@ -3,16 +3,18 @@
 {% block content_title %}Tableau de bord{% endblock %}
 
 {% block main %}
-
-        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, </br> {{ea.user.workplace.designation}}</br></h2>
-        <p>Vous possédez les droits utilisateurs, vous pouvez donc ainsi gérer la messagerie, les commentaires et les annonces.</p></br>
+        <h2>Bienvenue {{ea.user.firstName}} {{ea.user.lastName}}, <br> {{ea.user.workplace.designation}}<br></h2>
+        <p>
+                Vous possédez les droits utilisateurs, vous pouvez donc ainsi gérer la messagerie, les commentaires
+                et les annonces.
+        </p>
+        <br>
         <h3>Messagerie</h3>
         <p>Dans vos catégories, un aperçu de la messagerie est disponible. Vous pouvez répondre en suivant ce lien : 
-            <a href="https://mailtrap.io/" target="_blank"><button type="button">Mailtrap</button></a></br>  
+            <a href="https://mailtrap.io/" target="_blank"><button type="button">Mailtrap</button></a><br>
         </p> 
         <h3>Retour vers le site web</h3>
-        <p>Pour retourner sur le site web en restant connecter, veuillez cliquer <a href="{{ path('app_') }}">ici</a> </p>
-          
-</div>
-
+        <p>Pour retourner sur le site web en restant connecter, veuillez cliquer
+                <a href="{{ path('app_') }}">ici</a>
+        </p>
 {% endblock %}

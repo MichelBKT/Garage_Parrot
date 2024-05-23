@@ -4,7 +4,9 @@
 {% block body %}
     <main class="container-fluid">
         <div class="row justify-content-center">
-            <h1 class="col-lg-8 mt-3 p-3 text-success fw-bold description text-center shadow-lg rounded mb-5">Nos véhicules d'occasion</h1>
+            <h1 class="col-lg-8 mt-3 p-3 text-success fw-bold description text-center shadow-lg rounded mb-5">
+                Nos véhicules d'occasion
+            </h1>
             <div class="row justify-content-center">
                {% include "partials/advert/_filters_car.html.twig" %}
             </div>
@@ -13,9 +15,6 @@
             <div class="row justify-content-center" id="js-filter-content">
                 {% include "partials/advert/_card.html.twig" %}
             </div>
-
         </div>
-     
-        
     </main>    
 {% endblock %}

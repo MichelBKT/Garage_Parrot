@@ -20,26 +20,31 @@ class ContactType extends AbstractType
                 'label' => 'Nom',
                 'label_attr' => ['class'=> 'text-light description rounded'],
                 'required' => true,
+                'attr' =>[ 'placeholder'=>'DUPONT'],
             ])
             ->add('first_name', TextType::class, [
                 'label' => 'Prénom',
                 'label_attr' => ['class' => 'text-light description rounded'],
                 'required' => true,
+                'attr' =>[ 'placeholder'=>'Jean'],
             ])
             ->add('email', EmailType::class, [
                 'label' => 'E-mail',
                 'label_attr' => ['class' => 'text-light description rounded'],
                 'required' => true,
+                'attr' =>[ 'placeholder'=>'jean.dupont@test.com'],
             ])
             ->add('object', TextType::class, [
                 'label' => 'Objet',
                 'label_attr' => ['class' => 'text-light description rounded'],
+                'attr' =>[ 'placeholder'=>'Objet de votre demande'],
             ])
             ->add('subject', TextareaType::class, [
                 'label' => 'Message',
                 'required' => true,
                 'label_attr' => ['class' => 'text-light description rounded col'],
-                'row_attr' => [ 'class' => 'col']
+                'attr' =>[ 'placeholder'=>'Ecrivez votre message ici',
+                'rows' => 10],
             ])
             ->add('is_reading', HiddenType::class ,[
                 'empty_data' => false,
